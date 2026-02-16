@@ -1,0 +1,72 @@
+type token =
+    TK_VAR
+  | TK_SUB
+  | TK_STR of string
+  | TK_SKIP
+  | TK_SEMICOLON
+  | TK_RPAREN
+  | TK_RBRACE
+  | TK_NEQ
+  | TK_NAT of int
+  | TK_MUL
+  | TK_LST
+  | TK_LPAREN
+  | TK_LEQ
+  | TK_LBRACE
+  | TK_INITIAL
+  | TK_GST
+  | TK_GEQ
+  | TK_FROM
+  | TK_FINAL
+  | TK_EQ
+  | TK_EOF
+  | TK_DIV
+  | TK_COMMA
+  | TK_CHOICE
+  | TK_ASSIGN
+  | TK_ARROW
+  | TK_ADD
+val merge_declaration :
+  'a list * 'b option * 'c option * ('d * 'e) list ->
+  [< `Final of 'c
+   | `Initial of 'b
+   | `Location of 'd * 'e
+   | `Variables of 'a list ] ->
+  'a list * 'b option * 'c option * ('d * 'e) list
+val output :
+  'a ->
+  [< `Final of 'b
+   | `Initial of 'c
+   | `Location of 'd * 'e
+   | `Variables of 'f list ]
+  list -> 'a * 'f list * 'c option * 'b option * ('d * 'e) list
+val menhir_begin_marker : int
+val xv_variables : string list
+val xv_transition : Command.t * string
+val xv_skip : Command.t
+val xv_relop : Command.Predicate.op
+val xv_main :
+  string * string list * string option * string option *
+  (string * (Command.t * string) list) list
+val xv_list_transition_ : (Command.t * string) list
+val xv_list_declaration_ :
+  [ `Final of string
+  | `Initial of string
+  | `Location of string * (Command.t * string) list
+  | `Variables of string list ] list
+val xv_list_comma_string_ : string list
+val xv_initial : string
+val xv_guard : Command.t
+val xv_funop : Command.Expression.op
+val xv_from : string * (Command.t * string) list
+val xv_final : string
+val xv_expression : Command.Expression.t
+val xv_declaration :
+  [ `Final of string
+  | `Initial of string
+  | `Location of string * (Command.t * string) list
+  | `Variables of string list ]
+val xv_command : Command.t
+val xv_comma_string : string
+val xv_assign : Command.t
+val menhir_end_marker : int

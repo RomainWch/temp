@@ -1,0 +1,5 @@
+# Region file for negative_division.aut (forward inductive invariant).
+
+q_0 : tt;
+q_1 : x == -5;
+q_2 : y == -2;

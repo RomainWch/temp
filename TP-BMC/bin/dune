@@ -1,0 +1,4 @@
+(executables
+ (names bmc)
+ (modes byte native)
+ (libraries spa))

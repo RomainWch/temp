@@ -1,0 +1,33 @@
+# $Id$
+
+# Source directories
+<bin>: include
+<lib>: include
+<test/bin>: include
+<test/lib>: include
+
+# Required libraries
+true: thread
+true: package(zarith)
+true: package(z3)
+true: use_str
+
+# Use the same compilation flags as dune
+true: strict_sequence, strict_formats, short_paths, keep_locs
+true: no_alias_deps, opaque
+true: debug, bin_annot
+
+# Force -custom to work around z3's incorrect META file
+# <**/*.byte>: custom
+
+# Code optimization for native-code compilation
+true: optimize(3)
+
+# Enable all warnings by default except the following ones:
+# - Warning 44 (open statement shadows ...)
+# - Warning 70 (missing interface file)
+<**/*.ml>: warn_A, warn_-44, warn_-70
+
+# Disable warning 4 (fragile pattern matching) for the generated parsers
+"src/AutParser.ml": warn_-4
+"src/PrgParser.ml": warn_-4

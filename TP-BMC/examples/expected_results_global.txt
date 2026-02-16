@@ -1,0 +1,8018 @@
+####################
+# Forward Analysis #
+####################
+
+=============================
+aut/another_example.aut with bound 5
+=============================
+Automaton:
+   Another_Example
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 3 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x > y » q_3
+      » x < 0 » q_bad
+   q_3
+      » y := (y + x) » q_4
+   q_4
+      » x := (x - 1) » q_2
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/another_example.aut with bound 25
+=============================
+Automaton:
+   Another_Example
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 3 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x > y » q_3
+      » x < 0 » q_bad
+   q_3
+      » y := (y + x) » q_4
+   q_4
+      » x := (x - 1) » q_2
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/another_example.aut with bound 100
+=============================
+Automaton:
+   Another_Example
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 3 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x > y » q_3
+      » x < 0 » q_bad
+   q_3
+      » y := (y + x) » q_4
+   q_4
+      » x := (x - 1) » q_2
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/big_integers.aut with bound 5
+=============================
+Automaton:
+   Big_Integers
+4 variables:
+   max_int, min_int, y, z
+8 locations:
+   q_0, q_1, q_2, q_bad, q_y_large, q_y_small, q_z_large, q_z_small
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » max_int := 4611686018427387903 » q_1
+   q_1
+      » min_int := (-4611686018427387903 - 1) » q_2
+   q_2
+      » y := (max_int + 1) » q_y_large
+      » z := (2 * max_int) » q_z_large
+      » y := (min_int - 1) » q_y_small
+      » z := (2 * min_int) » q_z_small
+   q_y_large
+      » y <= max_int » q_bad
+   q_y_small
+      » y >= min_int » q_bad
+   q_z_large
+      » z <= max_int » q_bad
+   q_z_small
+      » z >= min_int » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/big_integers.aut with bound 25
+=============================
+Automaton:
+   Big_Integers
+4 variables:
+   max_int, min_int, y, z
+8 locations:
+   q_0, q_1, q_2, q_bad, q_y_large, q_y_small, q_z_large, q_z_small
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » max_int := 4611686018427387903 » q_1
+   q_1
+      » min_int := (-4611686018427387903 - 1) » q_2
+   q_2
+      » y := (max_int + 1) » q_y_large
+      » z := (2 * max_int) » q_z_large
+      » y := (min_int - 1) » q_y_small
+      » z := (2 * min_int) » q_z_small
+   q_y_large
+      » y <= max_int » q_bad
+   q_y_small
+      » y >= min_int » q_bad
+   q_z_large
+      » z <= max_int » q_bad
+   q_z_small
+      » z >= min_int » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/big_integers.aut with bound 100
+=============================
+Automaton:
+   Big_Integers
+4 variables:
+   max_int, min_int, y, z
+8 locations:
+   q_0, q_1, q_2, q_bad, q_y_large, q_y_small, q_z_large, q_z_small
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » max_int := 4611686018427387903 » q_1
+   q_1
+      » min_int := (-4611686018427387903 - 1) » q_2
+   q_2
+      » y := (max_int + 1) » q_y_large
+      » z := (2 * max_int) » q_z_large
+      » y := (min_int - 1) » q_y_small
+      » z := (2 * min_int) » q_z_small
+   q_y_large
+      » y <= max_int » q_bad
+   q_y_small
+      » y >= min_int » q_bad
+   q_z_large
+      » z <= max_int » q_bad
+   q_z_small
+      » z >= min_int » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/congruence_1.aut with bound 5
+=============================
+Automaton:
+   Congruence_1
+3 variables:
+   x, y, z
+10 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := 5 » q_02
+   q_02
+      » x != 5 » q_bad
+      » x < 2 » q_bad
+      » x <= 3 » q_bad
+      » x >= 7 » q_bad
+      » x > 8 » q_bad
+      » (x + 8) != 13 » q_bad
+      » (x - 8) != -3 » q_bad
+      » (0 * x) != 0 » q_bad
+      » (x * 3) != 15 » q_bad
+      » (x / 2) != 2 » q_bad
+      » (x / 3) != 1 » q_bad
+      » (2 / x) != 0 » q_bad
+      » (-7 / x) != -1 » q_bad
+      » (x * y) == 18 » q_bad
+      » (x * y) == 15 » q_03
+   q_03
+      » (y * z) == x » q_bad
+      » ((y * z) - x) == y » q_bad
+      » z := (x + y) » q_04
+      » z := (y + x) » q_04
+      » z == (x + y) » q_04
+      » z := (x - y) » q_05
+      » x == (y + z) » q_05
+      » z := (y - x) » q_06
+      » (x + z) == y » q_06
+      » z := (x * y) » q_07
+      » z := (y * x) » q_07
+      » z := (x / y) » q_08
+      » z := (y / x) » q_09
+   q_04
+      » z == (x - y) » q_bad
+      » ((x * y) * z) <= ((x + y) + z) » q_bad
+      » (z / x) > y » q_bad
+   q_05
+      » ((x + y) + z) != 10 » q_bad
+      » ((x * y) * z) != 30 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_01: No
+
+=============================
+aut/congruence_1.aut with bound 25
+=============================
+Automaton:
+   Congruence_1
+3 variables:
+   x, y, z
+10 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := 5 » q_02
+   q_02
+      » x != 5 » q_bad
+      » x < 2 » q_bad
+      » x <= 3 » q_bad
+      » x >= 7 » q_bad
+      » x > 8 » q_bad
+      » (x + 8) != 13 » q_bad
+      » (x - 8) != -3 » q_bad
+      » (0 * x) != 0 » q_bad
+      » (x * 3) != 15 » q_bad
+      » (x / 2) != 2 » q_bad
+      » (x / 3) != 1 » q_bad
+      » (2 / x) != 0 » q_bad
+      » (-7 / x) != -1 » q_bad
+      » (x * y) == 18 » q_bad
+      » (x * y) == 15 » q_03
+   q_03
+      » (y * z) == x » q_bad
+      » ((y * z) - x) == y » q_bad
+      » z := (x + y) » q_04
+      » z := (y + x) » q_04
+      » z == (x + y) » q_04
+      » z := (x - y) » q_05
+      » x == (y + z) » q_05
+      » z := (y - x) » q_06
+      » (x + z) == y » q_06
+      » z := (x * y) » q_07
+      » z := (y * x) » q_07
+      » z := (x / y) » q_08
+      » z := (y / x) » q_09
+   q_04
+      » z == (x - y) » q_bad
+      » ((x * y) * z) <= ((x + y) + z) » q_bad
+      » (z / x) > y » q_bad
+   q_05
+      » ((x + y) + z) != 10 » q_bad
+      » ((x * y) * z) != 30 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_01: No
+
+=============================
+aut/congruence_1.aut with bound 100
+=============================
+Automaton:
+   Congruence_1
+3 variables:
+   x, y, z
+10 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := 5 » q_02
+   q_02
+      » x != 5 » q_bad
+      » x < 2 » q_bad
+      » x <= 3 » q_bad
+      » x >= 7 » q_bad
+      » x > 8 » q_bad
+      » (x + 8) != 13 » q_bad
+      » (x - 8) != -3 » q_bad
+      » (0 * x) != 0 » q_bad
+      » (x * 3) != 15 » q_bad
+      » (x / 2) != 2 » q_bad
+      » (x / 3) != 1 » q_bad
+      » (2 / x) != 0 » q_bad
+      » (-7 / x) != -1 » q_bad
+      » (x * y) == 18 » q_bad
+      » (x * y) == 15 » q_03
+   q_03
+      » (y * z) == x » q_bad
+      » ((y * z) - x) == y » q_bad
+      » z := (x + y) » q_04
+      » z := (y + x) » q_04
+      » z == (x + y) » q_04
+      » z := (x - y) » q_05
+      » x == (y + z) » q_05
+      » z := (y - x) » q_06
+      » (x + z) == y » q_06
+      » z := (x * y) » q_07
+      » z := (y * x) » q_07
+      » z := (x / y) » q_08
+      » z := (y / x) » q_09
+   q_04
+      » z == (x - y) » q_bad
+      » ((x * y) * z) <= ((x + y) + z) » q_bad
+      » (z / x) > y » q_bad
+   q_05
+      » ((x + y) + z) != 10 » q_bad
+      » ((x * y) * z) != 30 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_01: No
+
+=============================
+aut/congruence_2.aut with bound 5
+=============================
+Automaton:
+   Congruence_2
+3 variables:
+   x, y, z
+14 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_10, q_11, 
+   q_12, q_13, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := -9 » q_02
+      » x := 3 » q_02
+   q_02
+      » y := 10 » q_03
+      » y := 18 » q_03
+   q_03
+      » x := (x + 12) » q_03
+      » x := ((x + (3 * y)) - 6) » q_03
+      » y := (y - 8) » q_03
+      » x == y » q_bad
+      » (x - 1) == y » q_04
+      » x == (6 * z) » q_bad
+      » y == (4 * z) » q_bad
+      » (x + y) == (2 * z) » q_bad
+      » z := (x + y) » q_05
+      » z := (y - x) » q_06
+      » z := (x * y) » q_07
+      » z := (x / y) » q_08
+      » z := (5 / y) » q_09
+      » z := (7 / (x - 1)) » q_10
+   q_05
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_06
+      » ((x + y) + z) == 2 » q_bad
+      » ((x * y) * z) == 2 » q_bad
+   q_07
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_08
+      » (x * y) == 12 » q_bad
+   q_09
+      » z := (z + 2) » q_09
+      » z == 1 » q_bad
+   q_10
+      » y == z » q_11
+      » (x + y) == z » q_12
+      » (x + (y * (1 + z))) == -1 » q_13
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_01: Unknown
+
+=============================
+aut/congruence_2.aut with bound 25
+=============================
+Automaton:
+   Congruence_2
+3 variables:
+   x, y, z
+14 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_10, q_11, 
+   q_12, q_13, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := -9 » q_02
+      » x := 3 » q_02
+   q_02
+      » y := 10 » q_03
+      » y := 18 » q_03
+   q_03
+      » x := (x + 12) » q_03
+      » x := ((x + (3 * y)) - 6) » q_03
+      » y := (y - 8) » q_03
+      » x == y » q_bad
+      » (x - 1) == y » q_04
+      » x == (6 * z) » q_bad
+      » y == (4 * z) » q_bad
+      » (x + y) == (2 * z) » q_bad
+      » z := (x + y) » q_05
+      » z := (y - x) » q_06
+      » z := (x * y) » q_07
+      » z := (x / y) » q_08
+      » z := (5 / y) » q_09
+      » z := (7 / (x - 1)) » q_10
+   q_05
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_06
+      » ((x + y) + z) == 2 » q_bad
+      » ((x * y) * z) == 2 » q_bad
+   q_07
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_08
+      » (x * y) == 12 » q_bad
+   q_09
+      » z := (z + 2) » q_09
+      » z == 1 » q_bad
+   q_10
+      » y == z » q_11
+      » (x + y) == z » q_12
+      » (x + (y * (1 + z))) == -1 » q_13
+
+Bounded model checking: forward, depth <= 25
+
+=============================
+aut/congruence_2.aut with bound 100
+=============================
+Automaton:
+   Congruence_2
+3 variables:
+   x, y, z
+14 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_10, q_11, 
+   q_12, q_13, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := -9 » q_02
+      » x := 3 » q_02
+   q_02
+      » y := 10 » q_03
+      » y := 18 » q_03
+   q_03
+      » x := (x + 12) » q_03
+      » x := ((x + (3 * y)) - 6) » q_03
+      » y := (y - 8) » q_03
+      » x == y » q_bad
+      » (x - 1) == y » q_04
+      » x == (6 * z) » q_bad
+      » y == (4 * z) » q_bad
+      » (x + y) == (2 * z) » q_bad
+      » z := (x + y) » q_05
+      » z := (y - x) » q_06
+      » z := (x * y) » q_07
+      » z := (x / y) » q_08
+      » z := (5 / y) » q_09
+      » z := (7 / (x - 1)) » q_10
+   q_05
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_06
+      » ((x + y) + z) == 2 » q_bad
+      » ((x * y) * z) == 2 » q_bad
+   q_07
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_08
+      » (x * y) == 12 » q_bad
+   q_09
+      » z := (z + 2) » q_09
+      » z == 1 » q_bad
+   q_10
+      » y == z » q_11
+      » (x + y) == z » q_12
+      » (x + (y * (1 + z))) == -1 » q_13
+
+Bounded model checking: forward, depth <= 100
+
+=============================
+aut/constant_propagation.aut with bound 5
+=============================
+Automaton:
+   Constant_Propagation
+3 variables:
+   x, y, z
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 1 » q_1
+      » x := 2 » q_2
+   q_1
+      » y := 2 » q_3
+   q_2
+      » y := 1 » q_3
+   q_3
+      » z := (x + y) » q_4
+   q_4
+      » z != 3 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/constant_propagation.aut with bound 25
+=============================
+Automaton:
+   Constant_Propagation
+3 variables:
+   x, y, z
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 1 » q_1
+      » x := 2 » q_2
+   q_1
+      » y := 2 » q_3
+   q_2
+      » y := 1 » q_3
+   q_3
+      » z := (x + y) » q_4
+   q_4
+      » z != 3 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/constant_propagation.aut with bound 100
+=============================
+Automaton:
+   Constant_Propagation
+3 variables:
+   x, y, z
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 1 » q_1
+      » x := 2 » q_2
+   q_1
+      » y := 2 » q_3
+   q_2
+      » y := 1 » q_3
+   q_3
+      » z := (x + y) » q_4
+   q_4
+      » z != 3 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/division_by_zero.aut with bound 5
+=============================
+Automaton:
+   Division_by_Zero
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_bad, q_bad'
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x <= (3 / 0) » q_bad'
+      » x := -1 » q_1
+      » x := (x / (y + 2)) » q_2
+      » (x / y) > 3 » q_3
+   q_1
+      » y := (3 / (x + 1)) » q_bad'
+   q_2
+      » y == -2 » q_bad
+   q_3
+      » y == 0 » q_bad
+   q_bad'
+      » skip » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/division_by_zero.aut with bound 25
+=============================
+Automaton:
+   Division_by_Zero
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_bad, q_bad'
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x <= (3 / 0) » q_bad'
+      » x := -1 » q_1
+      » x := (x / (y + 2)) » q_2
+      » (x / y) > 3 » q_3
+   q_1
+      » y := (3 / (x + 1)) » q_bad'
+   q_2
+      » y == -2 » q_bad
+   q_3
+      » y == 0 » q_bad
+   q_bad'
+      » skip » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/division_by_zero.aut with bound 100
+=============================
+Automaton:
+   Division_by_Zero
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_bad, q_bad'
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x <= (3 / 0) » q_bad'
+      » x := -1 » q_1
+      » x := (x / (y + 2)) » q_2
+      » (x / y) > 3 » q_3
+   q_1
+      » y := (3 / (x + 1)) » q_bad'
+   q_2
+      » y == -2 » q_bad
+   q_3
+      » y == 0 » q_bad
+   q_bad'
+      » skip » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/inductive_invariants_exercise_1.aut with bound 5
+=============================
+Automaton:
+   Exercise_1
+2 variables:
+   x, y
+3 locations:
+   q_0, q_1, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » x := (x * y) » q_1
+      » x := (x + 3) » q_1
+      » x == 10 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/inductive_invariants_exercise_1.aut with bound 25
+=============================
+Automaton:
+   Exercise_1
+2 variables:
+   x, y
+3 locations:
+   q_0, q_1, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » x := (x * y) » q_1
+      » x := (x + 3) » q_1
+      » x == 10 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+=============================
+aut/inductive_invariants_exercise_1.aut with bound 100
+=============================
+Automaton:
+   Exercise_1
+2 variables:
+   x, y
+3 locations:
+   q_0, q_1, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » x := (x * y) » q_1
+      » x := (x + 3) » q_1
+      » x == 10 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+=============================
+aut/inductive_invariants_exercise_2.aut with bound 5
+=============================
+Automaton:
+   Exercise_2
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » y > 0 » q_1
+   q_1
+      » x := 0 » q_2
+   q_2
+      » x := (x + y) » q_3
+      » y == 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/inductive_invariants_exercise_2.aut with bound 25
+=============================
+Automaton:
+   Exercise_2
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » y > 0 » q_1
+   q_1
+      » x := 0 » q_2
+   q_2
+      » x := (x + y) » q_3
+      » y == 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/inductive_invariants_exercise_2.aut with bound 100
+=============================
+Automaton:
+   Exercise_2
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » y > 0 » q_1
+   q_1
+      » x := 0 » q_2
+   q_2
+      » x := (x + y) » q_3
+      » y == 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/inductive_invariant_simple.aut with bound 5
+=============================
+Automaton:
+   Example
+1 variables:
+   x
+3 locations:
+   A, B, C
+Initial location:
+   A
+Final location:
+   C
+Transitions:
+   A
+      » x := 1 » B
+   B
+      » x := (5 * x) » B
+      » x := (x + 2) » B
+      » x < 0 » C
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location C reachable from initial location A: Unknown
+
+=============================
+aut/inductive_invariant_simple.aut with bound 25
+=============================
+Automaton:
+   Example
+1 variables:
+   x
+3 locations:
+   A, B, C
+Initial location:
+   A
+Final location:
+   C
+Transitions:
+   A
+      » x := 1 » B
+   B
+      » x := (5 * x) » B
+      » x := (x + 2) » B
+      » x < 0 » C
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location C reachable from initial location A: Unknown
+
+=============================
+aut/inductive_invariant_simple.aut with bound 100
+=============================
+Automaton:
+   Example
+1 variables:
+   x
+3 locations:
+   A, B, C
+Initial location:
+   A
+Final location:
+   C
+Transitions:
+   A
+      » x := 1 » B
+   B
+      » x := (5 * x) » B
+      » x := (x + 2) » B
+      » x < 0 » C
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location C reachable from initial location A: Unknown
+
+=============================
+aut/infinite_descent.aut with bound 5
+=============================
+Automaton:
+   Infinite_Descent
+1 variables:
+   x
+4 locations:
+   q_0, q_1, q_2, r
+Initial location:
+   q_0
+Final location:
+   r
+Transitions:
+   q_0
+      » skip » q_2
+      » x := 0 » q_1
+   q_1
+      » x == 3 » r
+   q_2
+      » x := 1 » q_1
+   r
+      » x := (x + 1) » r
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location r reachable from initial location q_0: No
+
+=============================
+aut/infinite_descent.aut with bound 25
+=============================
+Automaton:
+   Infinite_Descent
+1 variables:
+   x
+4 locations:
+   q_0, q_1, q_2, r
+Initial location:
+   q_0
+Final location:
+   r
+Transitions:
+   q_0
+      » skip » q_2
+      » x := 0 » q_1
+   q_1
+      » x == 3 » r
+   q_2
+      » x := 1 » q_1
+   r
+      » x := (x + 1) » r
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location r reachable from initial location q_0: No
+
+=============================
+aut/infinite_descent.aut with bound 100
+=============================
+Automaton:
+   Infinite_Descent
+1 variables:
+   x
+4 locations:
+   q_0, q_1, q_2, r
+Initial location:
+   q_0
+Final location:
+   r
+Transitions:
+   q_0
+      » skip » q_2
+      » x := 0 » q_1
+   q_1
+      » x == 3 » r
+   q_2
+      » x := 1 » q_1
+   r
+      » x := (x + 1) » r
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location r reachable from initial location q_0: No
+
+=============================
+aut/negative_division.aut with bound 5
+=============================
+Automaton:
+   Negative_Division
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := -5 » q_1
+   q_1
+      » y := (x / 2) » q_2
+   q_2
+      » y != -2 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/negative_division.aut with bound 25
+=============================
+Automaton:
+   Negative_Division
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := -5 » q_1
+   q_1
+      » y := (x / 2) » q_2
+   q_2
+      » y != -2 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/negative_division.aut with bound 100
+=============================
+Automaton:
+   Negative_Division
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := -5 » q_1
+   q_1
+      » y := (x / 2) » q_2
+   q_2
+      » y != -2 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/predicates-01.aut with bound 5
+=============================
+Automaton:
+   Predicates_1
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x := (x + 1) » q_3
+      » x > 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » (x + y) < 0 » q_bad
+      » (x + y) > 0 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/predicates-01.aut with bound 25
+=============================
+Automaton:
+   Predicates_1
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x := (x + 1) » q_3
+      » x > 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » (x + y) < 0 » q_bad
+      » (x + y) > 0 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/predicates-01.aut with bound 100
+=============================
+Automaton:
+   Predicates_1
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x := (x + 1) » q_3
+      » x > 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » (x + y) < 0 » q_bad
+      » (x + y) > 0 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/predicates-02.aut with bound 5
+=============================
+Automaton:
+   Predicates_2
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+   q_1
+      » y := x » q_2
+   q_2
+      » y < 0 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/predicates-02.aut with bound 25
+=============================
+Automaton:
+   Predicates_2
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+   q_1
+      » y := x » q_2
+   q_2
+      » y < 0 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/predicates-02.aut with bound 100
+=============================
+Automaton:
+   Predicates_2
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+   q_1
+      » y := x » q_2
+   q_2
+      » y < 0 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/pre_only.aut with bound 5
+=============================
+Automaton:
+   Pre_Only
+3 variables:
+   x, y, z
+5 locations:
+   q_0, q_1, q_2, q_3, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » (x * y) >= 0 » q_1
+   q_1
+      » z := y » q_2
+   q_2
+      » x < 0 » q_3
+   q_3
+      » z >= 3 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/pre_only.aut with bound 25
+=============================
+Automaton:
+   Pre_Only
+3 variables:
+   x, y, z
+5 locations:
+   q_0, q_1, q_2, q_3, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » (x * y) >= 0 » q_1
+   q_1
+      » z := y » q_2
+   q_2
+      » x < 0 » q_3
+   q_3
+      » z >= 3 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/pre_only.aut with bound 100
+=============================
+Automaton:
+   Pre_Only
+3 variables:
+   x, y, z
+5 locations:
+   q_0, q_1, q_2, q_3, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » (x * y) >= 0 » q_1
+   q_1
+      » z := y » q_2
+   q_2
+      » x < 0 » q_3
+   q_3
+      » z >= 3 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/running_example.aut with bound 5
+=============================
+Automaton:
+   Running_Example
+2 variables:
+   x, y
+9 locations:
+   q_01, q_02, q_03, q_06, q_07, q_08, q_11, q_12, q_13
+Initial location:
+   q_01
+Final location:
+   q_13
+Transitions:
+   q_01
+      » x := 1 » q_02
+   q_02
+      » y <= 10 » q_03
+      » y > 10 » q_06
+   q_03
+      » y := 10 » q_11
+   q_06
+      » x < y » q_07
+      » x >= y » q_11
+   q_07
+      » x := (2 * x) » q_08
+   q_08
+      » y := (y - 1) » q_06
+   q_11
+      » x := (y + 1) » q_12
+   q_12
+      » x <= 0 » q_13
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_13 reachable from initial location q_01: Unknown
+
+=============================
+aut/running_example.aut with bound 25
+=============================
+Automaton:
+   Running_Example
+2 variables:
+   x, y
+9 locations:
+   q_01, q_02, q_03, q_06, q_07, q_08, q_11, q_12, q_13
+Initial location:
+   q_01
+Final location:
+   q_13
+Transitions:
+   q_01
+      » x := 1 » q_02
+   q_02
+      » y <= 10 » q_03
+      » y > 10 » q_06
+   q_03
+      » y := 10 » q_11
+   q_06
+      » x < y » q_07
+      » x >= y » q_11
+   q_07
+      » x := (2 * x) » q_08
+   q_08
+      » y := (y - 1) » q_06
+   q_11
+      » x := (y + 1) » q_12
+   q_12
+      » x <= 0 » q_13
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_13 reachable from initial location q_01: Unknown
+
+=============================
+aut/running_example.aut with bound 100
+=============================
+Automaton:
+   Running_Example
+2 variables:
+   x, y
+9 locations:
+   q_01, q_02, q_03, q_06, q_07, q_08, q_11, q_12, q_13
+Initial location:
+   q_01
+Final location:
+   q_13
+Transitions:
+   q_01
+      » x := 1 » q_02
+   q_02
+      » y <= 10 » q_03
+      » y > 10 » q_06
+   q_03
+      » y := 10 » q_11
+   q_06
+      » x < y » q_07
+      » x >= y » q_11
+   q_07
+      » x := (2 * x) » q_08
+   q_08
+      » y := (y - 1) » q_06
+   q_11
+      » x := (y + 1) » q_12
+   q_12
+      » x <= 0 » q_13
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_13 reachable from initial location q_01: Unknown
+
+=============================
+aut/sign_nonzero_crucial.aut with bound 5
+=============================
+Automaton:
+   Sign_Nonzero
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+      » x < 0 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial.aut with bound 25
+=============================
+Automaton:
+   Sign_Nonzero
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+      » x < 0 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial.aut with bound 100
+=============================
+Automaton:
+   Sign_Nonzero
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+      » x < 0 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial_variant.aut with bound 5
+=============================
+Automaton:
+   Sign_Nonzero_Variant
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 2 » q_1
+      » x := -3 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial_variant.aut with bound 25
+=============================
+Automaton:
+   Sign_Nonzero_Variant
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 2 » q_1
+      » x := -3 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial_variant.aut with bound 100
+=============================
+Automaton:
+   Sign_Nonzero_Variant
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 2 » q_1
+      » x := -3 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/single_path_hard_for_z3.aut with bound 5
+=============================
+Automaton:
+   Single_Path_Hard_for_Z3
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x == (3 * (x / 3)) » q_1
+   q_1
+      » x := (x * y) » q_2
+   q_2
+      » (x - 1) == (3 * (x / 3)) » q_bad
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/single_path_hard_for_z3.aut with bound 25
+=============================
+Automaton:
+   Single_Path_Hard_for_Z3
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x == (3 * (x / 3)) » q_1
+   q_1
+      » x := (x * y) » q_2
+   q_2
+      » (x - 1) == (3 * (x / 3)) » q_bad
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/single_path_hard_for_z3.aut with bound 100
+=============================
+Automaton:
+   Single_Path_Hard_for_Z3
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x == (3 * (x / 3)) » q_1
+   q_1
+      » x := (x * y) » q_2
+   q_2
+      » (x - 1) == (3 * (x / 3)) » q_bad
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+prg/bfs_shorter.c with bound 5
+=============================
+Automaton:
+   bfs_sorter
+1 variables:
+   x
+8 locations:
+   l07-c01, l08-c01, l10-c02, l12-c03, l16-c03, l18-c02, l20-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » 1 != 0 » l10-c02
+      » 1 == 0 » l20-c00
+   l10-c02
+      » skip » l12-c03
+      » skip » l16-c03
+   l12-c03
+      » skip » l18-c02
+   l16-c03
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » x <= 10 » l08-c01
+      » x > 10 » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/bfs_shorter.c with bound 25
+=============================
+Automaton:
+   bfs_sorter
+1 variables:
+   x
+8 locations:
+   l07-c01, l08-c01, l10-c02, l12-c03, l16-c03, l18-c02, l20-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » 1 != 0 » l10-c02
+      » 1 == 0 » l20-c00
+   l10-c02
+      » skip » l12-c03
+      » skip » l16-c03
+   l12-c03
+      » skip » l18-c02
+   l16-c03
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » x <= 10 » l08-c01
+      » x > 10 » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/bfs_shorter.c with bound 100
+=============================
+Automaton:
+   bfs_sorter
+1 variables:
+   x
+8 locations:
+   l07-c01, l08-c01, l10-c02, l12-c03, l16-c03, l18-c02, l20-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » 1 != 0 » l10-c02
+      » 1 == 0 » l20-c00
+   l10-c02
+      » skip » l12-c03
+      » skip » l16-c03
+   l12-c03
+      » skip » l18-c02
+   l16-c03
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » x <= 10 » l08-c01
+      » x > 10 » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path (of length 45):
+   l07-c01
+      » x := 0 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x > 10 »
+   ~assert
+
+Final location ~assert reachable from initial location l07-c01: Yes
+
+=============================
+prg/bin_sum.c with bound 5
+=============================
+Automaton:
+   bin_sum
+4 variables:
+   x, y, zbin, zun
+17 locations:
+   l07-c01, l09-c01, l11-c01, l12-c02, l13-c02, l16-c01, l17-c02, l18-c02,
+   l21-c01, l22-c02, l23-c02, l26-c01, l27-c02, l28-c02, l31-c01, l32-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » zbin := (x + y) » l09-c01
+   l09-c01
+      » zun := 0 » l11-c01
+   l11-c01
+      » x > 0 » l12-c02
+      » x <= 0 » l16-c01
+   l12-c02
+      » x := (x - 1) » l13-c02
+   l13-c02
+      » zun := (zun + 1) » l11-c01
+   l16-c01
+      » x < 0 » l17-c02
+      » x >= 0 » l21-c01
+   l17-c02
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » zun := (zun - 1) » l16-c01
+   l21-c01
+      » y > 0 » l22-c02
+      » y <= 0 » l26-c01
+   l22-c02
+      » y := (y - 1) » l23-c02
+   l23-c02
+      » zun := (zun + 1) » l21-c01
+   l26-c01
+      » y < 0 » l27-c02
+      » y >= 0 » l31-c01
+   l27-c02
+      » y := (y + 1) » l28-c02
+   l28-c02
+      » zun := (zun - 1) » l26-c01
+   l31-c01
+      » zbin == zun » l32-c00
+      » zbin != zun » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/bin_sum.c with bound 25
+=============================
+Automaton:
+   bin_sum
+4 variables:
+   x, y, zbin, zun
+17 locations:
+   l07-c01, l09-c01, l11-c01, l12-c02, l13-c02, l16-c01, l17-c02, l18-c02,
+   l21-c01, l22-c02, l23-c02, l26-c01, l27-c02, l28-c02, l31-c01, l32-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » zbin := (x + y) » l09-c01
+   l09-c01
+      » zun := 0 » l11-c01
+   l11-c01
+      » x > 0 » l12-c02
+      » x <= 0 » l16-c01
+   l12-c02
+      » x := (x - 1) » l13-c02
+   l13-c02
+      » zun := (zun + 1) » l11-c01
+   l16-c01
+      » x < 0 » l17-c02
+      » x >= 0 » l21-c01
+   l17-c02
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » zun := (zun - 1) » l16-c01
+   l21-c01
+      » y > 0 » l22-c02
+      » y <= 0 » l26-c01
+   l22-c02
+      » y := (y - 1) » l23-c02
+   l23-c02
+      » zun := (zun + 1) » l21-c01
+   l26-c01
+      » y < 0 » l27-c02
+      » y >= 0 » l31-c01
+   l27-c02
+      » y := (y + 1) » l28-c02
+   l28-c02
+      » zun := (zun - 1) » l26-c01
+   l31-c01
+      » zbin == zun » l32-c00
+      » zbin != zun » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/bin_sum.c with bound 100
+=============================
+Automaton:
+   bin_sum
+4 variables:
+   x, y, zbin, zun
+17 locations:
+   l07-c01, l09-c01, l11-c01, l12-c02, l13-c02, l16-c01, l17-c02, l18-c02,
+   l21-c01, l22-c02, l23-c02, l26-c01, l27-c02, l28-c02, l31-c01, l32-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » zbin := (x + y) » l09-c01
+   l09-c01
+      » zun := 0 » l11-c01
+   l11-c01
+      » x > 0 » l12-c02
+      » x <= 0 » l16-c01
+   l12-c02
+      » x := (x - 1) » l13-c02
+   l13-c02
+      » zun := (zun + 1) » l11-c01
+   l16-c01
+      » x < 0 » l17-c02
+      » x >= 0 » l21-c01
+   l17-c02
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » zun := (zun - 1) » l16-c01
+   l21-c01
+      » y > 0 » l22-c02
+      » y <= 0 » l26-c01
+   l22-c02
+      » y := (y - 1) » l23-c02
+   l23-c02
+      » zun := (zun + 1) » l21-c01
+   l26-c01
+      » y < 0 » l27-c02
+      » y >= 0 » l31-c01
+   l27-c02
+      » y := (y + 1) » l28-c02
+   l28-c02
+      » zun := (zun - 1) » l26-c01
+   l31-c01
+      » zbin == zun » l32-c00
+      » zbin != zun » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+=============================
+prg/classic_for_loop.c with bound 5
+=============================
+Automaton:
+   classic
+1 variables:
+   x
+6 locations:
+   l08-c06, l08-c12, l08-c23, l09-c01, l10-c00, ~assert
+Initial location:
+   l08-c06
+Final location:
+   ~assert
+Transitions:
+   l08-c06
+      » x := 1 » l08-c12
+   l08-c12
+      » x <= 100 » l08-c23
+      » x > 100 » l09-c01
+   l08-c23
+      » x := (x + 1) » l08-c12
+   l09-c01
+      » x < 150 » l10-c00
+      » x >= 150 » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c06: Unknown
+
+=============================
+prg/classic_for_loop.c with bound 25
+=============================
+Automaton:
+   classic
+1 variables:
+   x
+6 locations:
+   l08-c06, l08-c12, l08-c23, l09-c01, l10-c00, ~assert
+Initial location:
+   l08-c06
+Final location:
+   ~assert
+Transitions:
+   l08-c06
+      » x := 1 » l08-c12
+   l08-c12
+      » x <= 100 » l08-c23
+      » x > 100 » l09-c01
+   l08-c23
+      » x := (x + 1) » l08-c12
+   l09-c01
+      » x < 150 » l10-c00
+      » x >= 150 » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c06: Unknown
+
+=============================
+prg/classic_for_loop.c with bound 100
+=============================
+Automaton:
+   classic
+1 variables:
+   x
+6 locations:
+   l08-c06, l08-c12, l08-c23, l09-c01, l10-c00, ~assert
+Initial location:
+   l08-c06
+Final location:
+   ~assert
+Transitions:
+   l08-c06
+      » x := 1 » l08-c12
+   l08-c12
+      » x <= 100 » l08-c23
+      » x > 100 » l09-c01
+   l08-c23
+      » x := (x + 1) » l08-c12
+   l09-c01
+      » x < 150 » l10-c00
+      » x >= 150 » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c06: Unknown
+
+=============================
+prg/dichotomy.c with bound 5
+=============================
+Automaton:
+   dichotomy
+2 variables:
+   x, y
+8 locations:
+   l08-c01, l09-c02, l10-c03, l11-c04, l13-c04, l15-c02, l17-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x < y » l09-c02
+      » x >= y » l17-c00
+   l09-c02
+      » x < y » l10-c03
+      » x >= y » l15-c02
+   l10-c03
+      » skip » l11-c04
+      » skip » l13-c04
+   l11-c04
+      » x := ((x + y) / 2) » l09-c02
+   l13-c04
+      » y := ((x + y) / 2) » l09-c02
+   l15-c02
+      » x == y » l17-c00
+      » x != y » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/dichotomy.c with bound 25
+=============================
+Automaton:
+   dichotomy
+2 variables:
+   x, y
+8 locations:
+   l08-c01, l09-c02, l10-c03, l11-c04, l13-c04, l15-c02, l17-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x < y » l09-c02
+      » x >= y » l17-c00
+   l09-c02
+      » x < y » l10-c03
+      » x >= y » l15-c02
+   l10-c03
+      » skip » l11-c04
+      » skip » l13-c04
+   l11-c04
+      » x := ((x + y) / 2) » l09-c02
+   l13-c04
+      » y := ((x + y) / 2) » l09-c02
+   l15-c02
+      » x == y » l17-c00
+      » x != y » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/dichotomy.c with bound 100
+=============================
+Automaton:
+   dichotomy
+2 variables:
+   x, y
+8 locations:
+   l08-c01, l09-c02, l10-c03, l11-c04, l13-c04, l15-c02, l17-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x < y » l09-c02
+      » x >= y » l17-c00
+   l09-c02
+      » x < y » l10-c03
+      » x >= y » l15-c02
+   l10-c03
+      » skip » l11-c04
+      » skip » l13-c04
+   l11-c04
+      » x := ((x + y) / 2) » l09-c02
+   l13-c04
+      » y := ((x + y) / 2) » l09-c02
+   l15-c02
+      » x == y » l17-c00
+      » x != y » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+=============================
+prg/division.c with bound 5
+=============================
+Automaton:
+   division
+2 variables:
+   x, y
+8 locations:
+   l05-c04, l06-c04, l07-c04, l08-c08, l09-c08, l10-c08, l12-c00, ~assert
+Initial location:
+   l05-c04
+Final location:
+   ~assert
+Transitions:
+   l05-c04
+      » x := 30 » l06-c04
+   l06-c04
+      » y := 10 » l07-c04
+   l07-c04
+      » x > 1 » l08-c08
+      » x <= 1 » l12-c00
+   l08-c08
+      » x := (x / y) » l09-c08
+   l09-c08
+      » y := (y + 1) » l10-c08
+   l10-c08
+      » x < y » l07-c04
+      » x >= y » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l05-c04: Unknown
+
+=============================
+prg/division.c with bound 25
+=============================
+Automaton:
+   division
+2 variables:
+   x, y
+8 locations:
+   l05-c04, l06-c04, l07-c04, l08-c08, l09-c08, l10-c08, l12-c00, ~assert
+Initial location:
+   l05-c04
+Final location:
+   ~assert
+Transitions:
+   l05-c04
+      » x := 30 » l06-c04
+   l06-c04
+      » y := 10 » l07-c04
+   l07-c04
+      » x > 1 » l08-c08
+      » x <= 1 » l12-c00
+   l08-c08
+      » x := (x / y) » l09-c08
+   l09-c08
+      » y := (y + 1) » l10-c08
+   l10-c08
+      » x < y » l07-c04
+      » x >= y » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l05-c04: No
+
+=============================
+prg/division.c with bound 100
+=============================
+Automaton:
+   division
+2 variables:
+   x, y
+8 locations:
+   l05-c04, l06-c04, l07-c04, l08-c08, l09-c08, l10-c08, l12-c00, ~assert
+Initial location:
+   l05-c04
+Final location:
+   ~assert
+Transitions:
+   l05-c04
+      » x := 30 » l06-c04
+   l06-c04
+      » y := 10 » l07-c04
+   l07-c04
+      » x > 1 » l08-c08
+      » x <= 1 » l12-c00
+   l08-c08
+      » x := (x / y) » l09-c08
+   l09-c08
+      » y := (y + 1) » l10-c08
+   l10-c08
+      » x < y » l07-c04
+      » x >= y » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l05-c04: No
+
+=============================
+prg/locking.c with bound 5
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+11 locations:
+   l09-c01, l10-c01, l13-c02, l14-c02, l15-c02, l16-c02, l19-c03, l20-c03,
+   l21-c03, l24-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new != old » l13-c02
+      » new == old » l24-c00
+   l13-c02
+      » L == 0 » l14-c02
+      » L != 0 » ~assert
+   l14-c02
+      » L := 1 » l15-c02
+   l15-c02
+      » old := new » l16-c02
+   l16-c02
+      » skip » l19-c03
+      » skip » l10-c01
+   l19-c03
+      » L == 1 » l20-c03
+      » L != 1 » ~assert
+   l20-c03
+      » L := 0 » l21-c03
+   l21-c03
+      » new := (new + 1) » l10-c01
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l09-c01: Unknown
+
+=============================
+prg/locking.c with bound 25
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+11 locations:
+   l09-c01, l10-c01, l13-c02, l14-c02, l15-c02, l16-c02, l19-c03, l20-c03,
+   l21-c03, l24-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new != old » l13-c02
+      » new == old » l24-c00
+   l13-c02
+      » L == 0 » l14-c02
+      » L != 0 » ~assert
+   l14-c02
+      » L := 1 » l15-c02
+   l15-c02
+      » old := new » l16-c02
+   l16-c02
+      » skip » l19-c03
+      » skip » l10-c01
+   l19-c03
+      » L == 1 » l20-c03
+      » L != 1 » ~assert
+   l20-c03
+      » L := 0 » l21-c03
+   l21-c03
+      » new := (new + 1) » l10-c01
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l09-c01: Unknown
+
+=============================
+prg/locking.c with bound 100
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+11 locations:
+   l09-c01, l10-c01, l13-c02, l14-c02, l15-c02, l16-c02, l19-c03, l20-c03,
+   l21-c03, l24-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new != old » l13-c02
+      » new == old » l24-c00
+   l13-c02
+      » L == 0 » l14-c02
+      » L != 0 » ~assert
+   l14-c02
+      » L := 1 » l15-c02
+   l15-c02
+      » old := new » l16-c02
+   l16-c02
+      » skip » l19-c03
+      » skip » l10-c01
+   l19-c03
+      » L == 1 » l20-c03
+      » L != 1 » ~assert
+   l20-c03
+      » L := 0 » l21-c03
+   l21-c03
+      » new := (new + 1) » l10-c01
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l09-c01: Unknown
+
+=============================
+prg/locking_variant.c with bound 5
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+12 locations:
+   l09-c01, l10-c01, l11-c01, l14-c02, l15-c02, l16-c02, l17-c02, l20-c03,
+   l21-c03, l22-c03, l25-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new := (old + 1) » l11-c01
+   l11-c01
+      » new != old » l14-c02
+      » new == old » l25-c00
+   l14-c02
+      » L == 0 » l15-c02
+      » L != 0 » ~assert
+   l15-c02
+      » L := 1 » l16-c02
+   l16-c02
+      » old := new » l17-c02
+   l17-c02
+      » skip » l20-c03
+      » skip » l11-c01
+   l20-c03
+      » L == 1 » l21-c03
+      » L != 1 » ~assert
+   l21-c03
+      » L := 0 » l22-c03
+   l22-c03
+      » new := (new + 1) » l11-c01
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l09-c01: Unknown
+
+=============================
+prg/locking_variant.c with bound 25
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+12 locations:
+   l09-c01, l10-c01, l11-c01, l14-c02, l15-c02, l16-c02, l17-c02, l20-c03,
+   l21-c03, l22-c03, l25-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new := (old + 1) » l11-c01
+   l11-c01
+      » new != old » l14-c02
+      » new == old » l25-c00
+   l14-c02
+      » L == 0 » l15-c02
+      » L != 0 » ~assert
+   l15-c02
+      » L := 1 » l16-c02
+   l16-c02
+      » old := new » l17-c02
+   l17-c02
+      » skip » l20-c03
+      » skip » l11-c01
+   l20-c03
+      » L == 1 » l21-c03
+      » L != 1 » ~assert
+   l21-c03
+      » L := 0 » l22-c03
+   l22-c03
+      » new := (new + 1) » l11-c01
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l09-c01: Unknown
+
+=============================
+prg/locking_variant.c with bound 100
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+12 locations:
+   l09-c01, l10-c01, l11-c01, l14-c02, l15-c02, l16-c02, l17-c02, l20-c03,
+   l21-c03, l22-c03, l25-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new := (old + 1) » l11-c01
+   l11-c01
+      » new != old » l14-c02
+      » new == old » l25-c00
+   l14-c02
+      » L == 0 » l15-c02
+      » L != 0 » ~assert
+   l15-c02
+      » L := 1 » l16-c02
+   l16-c02
+      » old := new » l17-c02
+   l17-c02
+      » skip » l20-c03
+      » skip » l11-c01
+   l20-c03
+      » L == 1 » l21-c03
+      » L != 1 » ~assert
+   l21-c03
+      » L := 0 » l22-c03
+   l22-c03
+      » new := (new + 1) » l11-c01
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l09-c01: Unknown
+
+=============================
+prg/long_to_violate.c with bound 5
+=============================
+Automaton:
+   long_to_violate
+2 variables:
+   x, y
+11 locations:
+   l07-c01, l08-c01, l10-c02, l11-c03, l13-c03, l14-c02, l15-c03, l16-c02,
+   l18-c01, l19-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 20 » l10-c02
+      » x >= 20 » l18-c01
+   l10-c02
+      » y < 0 » l11-c03
+      » y >= 0 » l13-c03
+   l11-c03
+      » y := (y + x) » l14-c02
+   l13-c03
+      » y := (y - x) » l14-c02
+   l14-c02
+      » skip » l15-c03
+      » skip » l16-c02
+   l15-c03
+      » y := (y + 200) » l16-c02
+   l16-c02
+      » x := (x + 1) » l08-c01
+   l18-c01
+      » y > 0 » l19-c00
+      » y <= 0 » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/long_to_violate.c with bound 25
+=============================
+Automaton:
+   long_to_violate
+2 variables:
+   x, y
+11 locations:
+   l07-c01, l08-c01, l10-c02, l11-c03, l13-c03, l14-c02, l15-c03, l16-c02,
+   l18-c01, l19-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 20 » l10-c02
+      » x >= 20 » l18-c01
+   l10-c02
+      » y < 0 » l11-c03
+      » y >= 0 » l13-c03
+   l11-c03
+      » y := (y + x) » l14-c02
+   l13-c03
+      » y := (y - x) » l14-c02
+   l14-c02
+      » skip » l15-c03
+      » skip » l16-c02
+   l15-c03
+      » y := (y + 200) » l16-c02
+   l16-c02
+      » x := (x + 1) » l08-c01
+   l18-c01
+      » y > 0 » l19-c00
+      » y <= 0 » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/long_to_violate.c with bound 100
+=============================
+Automaton:
+   long_to_violate
+2 variables:
+   x, y
+11 locations:
+   l07-c01, l08-c01, l10-c02, l11-c03, l13-c03, l14-c02, l15-c03, l16-c02,
+   l18-c01, l19-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 20 » l10-c02
+      » x >= 20 » l18-c01
+   l10-c02
+      » y < 0 » l11-c03
+      » y >= 0 » l13-c03
+   l11-c03
+      » y := (y + x) » l14-c02
+   l13-c03
+      » y := (y - x) » l14-c02
+   l14-c02
+      » skip » l15-c03
+      » skip » l16-c02
+   l15-c03
+      » y := (y + 200) » l16-c02
+   l16-c02
+      » x := (x + 1) » l08-c01
+   l18-c01
+      » y > 0 » l19-c00
+      » y <= 0 » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+=============================
+prg/must_unfold_loop.c with bound 5
+=============================
+Automaton:
+   must_unfold_loop
+3 variables:
+   x, y, z
+11 locations:
+   l07-c01, l08-c01, l09-c01, l10-c06, l10-c12, l10-c21, l12-c02, l13-c03,
+   l14-c02, l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » z := 20 » l09-c01
+   l09-c01
+      » y := 0 » l10-c06
+   l10-c06
+      » x := 0 » l10-c12
+   l10-c12
+      » x < 20 » l12-c02
+      » x >= 20 » l16-c00
+   l10-c21
+      » x := (x + 1) » l10-c12
+   l12-c02
+      » skip » l13-c03
+      » skip » l14-c02
+   l13-c03
+      » y := (y + 1) » l14-c02
+   l14-c02
+      » (x * y) < z » l10-c21
+      » (x * y) >= z » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/must_unfold_loop.c with bound 25
+=============================
+Automaton:
+   must_unfold_loop
+3 variables:
+   x, y, z
+11 locations:
+   l07-c01, l08-c01, l09-c01, l10-c06, l10-c12, l10-c21, l12-c02, l13-c03,
+   l14-c02, l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » z := 20 » l09-c01
+   l09-c01
+      » y := 0 » l10-c06
+   l10-c06
+      » x := 0 » l10-c12
+   l10-c12
+      » x < 20 » l12-c02
+      » x >= 20 » l16-c00
+   l10-c21
+      » x := (x + 1) » l10-c12
+   l12-c02
+      » skip » l13-c03
+      » skip » l14-c02
+   l13-c03
+      » y := (y + 1) » l14-c02
+   l14-c02
+      » (x * y) < z » l10-c21
+      » (x * y) >= z » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/must_unfold_loop.c with bound 100
+=============================
+Automaton:
+   must_unfold_loop
+3 variables:
+   x, y, z
+11 locations:
+   l07-c01, l08-c01, l09-c01, l10-c06, l10-c12, l10-c21, l12-c02, l13-c03,
+   l14-c02, l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » z := 20 » l09-c01
+   l09-c01
+      » y := 0 » l10-c06
+   l10-c06
+      » x := 0 » l10-c12
+   l10-c12
+      » x < 20 » l12-c02
+      » x >= 20 » l16-c00
+   l10-c21
+      » x := (x + 1) » l10-c12
+   l12-c02
+      » skip » l13-c03
+      » skip » l14-c02
+   l13-c03
+      » y := (y + 1) » l14-c02
+   l14-c02
+      » (x * y) < z » l10-c21
+      » (x * y) >= z » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path (of length 28):
+   l07-c01
+      » x := 0 »
+   l08-c01
+      » z := 20 »
+   l09-c01
+      » y := 0 »
+   l10-c06
+      » x := 0 »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) < z »
+   l10-c21
+      » x := (x + 1) »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) < z »
+   l10-c21
+      » x := (x + 1) »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) < z »
+   l10-c21
+      » x := (x + 1) »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) < z »
+   l10-c21
+      » x := (x + 1) »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) >= z »
+   ~assert
+
+Final location ~assert reachable from initial location l07-c01: Yes
+
+=============================
+prg/no_assert.c with bound 5
+=============================
+Automaton:
+   no_assert
+3 variables:
+   x, y, z
+11 locations:
+   l07-c06, l07-c12, l07-c21, l09-c07, l09-c13, l09-c23, l11-c03, l12-c04,
+   l14-c04, l17-c00, ~assert
+Initial location:
+   l07-c06
+Final location:
+   ~assert
+Transitions:
+   l07-c06
+      » x := 0 » l07-c12
+   l07-c12
+      » x < 20 » l09-c07
+      » x >= 20 » l17-c00
+   l07-c21
+      » x := (x + 1) » l07-c12
+   l09-c07
+      » y := 0 » l09-c13
+   l09-c13
+      » y < (x * x) » l11-c03
+      » y >= (x * x) » l07-c21
+   l09-c23
+      » y := (y + 1) » l09-c13
+   l11-c03
+      » skip » l12-c04
+      » skip » l14-c04
+   l12-c04
+      » z := (z + 1) » l09-c23
+   l14-c04
+      » z := (z - 1) » l09-c23
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c06: Unknown
+
+=============================
+prg/no_assert.c with bound 25
+=============================
+Automaton:
+   no_assert
+3 variables:
+   x, y, z
+11 locations:
+   l07-c06, l07-c12, l07-c21, l09-c07, l09-c13, l09-c23, l11-c03, l12-c04,
+   l14-c04, l17-c00, ~assert
+Initial location:
+   l07-c06
+Final location:
+   ~assert
+Transitions:
+   l07-c06
+      » x := 0 » l07-c12
+   l07-c12
+      » x < 20 » l09-c07
+      » x >= 20 » l17-c00
+   l07-c21
+      » x := (x + 1) » l07-c12
+   l09-c07
+      » y := 0 » l09-c13
+   l09-c13
+      » y < (x * x) » l11-c03
+      » y >= (x * x) » l07-c21
+   l09-c23
+      » y := (y + 1) » l09-c13
+   l11-c03
+      » skip » l12-c04
+      » skip » l14-c04
+   l12-c04
+      » z := (z + 1) » l09-c23
+   l14-c04
+      » z := (z - 1) » l09-c23
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c06: Unknown
+
+=============================
+prg/no_assert.c with bound 100
+=============================
+Automaton:
+   no_assert
+3 variables:
+   x, y, z
+11 locations:
+   l07-c06, l07-c12, l07-c21, l09-c07, l09-c13, l09-c23, l11-c03, l12-c04,
+   l14-c04, l17-c00, ~assert
+Initial location:
+   l07-c06
+Final location:
+   ~assert
+Transitions:
+   l07-c06
+      » x := 0 » l07-c12
+   l07-c12
+      » x < 20 » l09-c07
+      » x >= 20 » l17-c00
+   l07-c21
+      » x := (x + 1) » l07-c12
+   l09-c07
+      » y := 0 » l09-c13
+   l09-c13
+      » y < (x * x) » l11-c03
+      » y >= (x * x) » l07-c21
+   l09-c23
+      » y := (y + 1) » l09-c13
+   l11-c03
+      » skip » l12-c04
+      » skip » l14-c04
+   l12-c04
+      » z := (z + 1) » l09-c23
+   l14-c04
+      » z := (z - 1) » l09-c23
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c06: Unknown
+
+=============================
+prg/not_reachable.c with bound 5
+=============================
+Automaton:
+   not_rechable
+3 variables:
+   x, y, z
+12 locations:
+   l08-c01, l09-c01, l11-c07, l11-c13, l11-c21, l13-c08, l13-c14, l13-c23,
+   l15-c04, l17-c03, l20-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x := 0 » l09-c01
+   l09-c01
+      » x < 10 » l11-c07
+      » x >= 10 » l20-c00
+   l11-c07
+      » y := x » l11-c13
+   l11-c13
+      » y < 0 » l13-c08
+      » y >= 0 » l09-c01
+   l11-c21
+      » y := (y + 1) » l11-c13
+   l13-c08
+      » z := 0 » l13-c14
+   l13-c14
+      » z < 10 » l15-c04
+      » z >= 10 » l17-c03
+   l13-c23
+      » z := (z + 1) » l13-c14
+   l15-c04
+      » x := (x + 1) » l13-c23
+   l17-c03
+      » 0 == 1 » l11-c21
+      » 0 != 1 » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/not_reachable.c with bound 25
+=============================
+Automaton:
+   not_rechable
+3 variables:
+   x, y, z
+12 locations:
+   l08-c01, l09-c01, l11-c07, l11-c13, l11-c21, l13-c08, l13-c14, l13-c23,
+   l15-c04, l17-c03, l20-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x := 0 » l09-c01
+   l09-c01
+      » x < 10 » l11-c07
+      » x >= 10 » l20-c00
+   l11-c07
+      » y := x » l11-c13
+   l11-c13
+      » y < 0 » l13-c08
+      » y >= 0 » l09-c01
+   l11-c21
+      » y := (y + 1) » l11-c13
+   l13-c08
+      » z := 0 » l13-c14
+   l13-c14
+      » z < 10 » l15-c04
+      » z >= 10 » l17-c03
+   l13-c23
+      » z := (z + 1) » l13-c14
+   l15-c04
+      » x := (x + 1) » l13-c23
+   l17-c03
+      » 0 == 1 » l11-c21
+      » 0 != 1 » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/not_reachable.c with bound 100
+=============================
+Automaton:
+   not_rechable
+3 variables:
+   x, y, z
+12 locations:
+   l08-c01, l09-c01, l11-c07, l11-c13, l11-c21, l13-c08, l13-c14, l13-c23,
+   l15-c04, l17-c03, l20-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x := 0 » l09-c01
+   l09-c01
+      » x < 10 » l11-c07
+      » x >= 10 » l20-c00
+   l11-c07
+      » y := x » l11-c13
+   l11-c13
+      » y < 0 » l13-c08
+      » y >= 0 » l09-c01
+   l11-c21
+      » y := (y + 1) » l11-c13
+   l13-c08
+      » z := 0 » l13-c14
+   l13-c14
+      » z < 10 » l15-c04
+      » z >= 10 » l17-c03
+   l13-c23
+      » z := (z + 1) » l13-c14
+   l15-c04
+      » x := (x + 1) » l13-c23
+   l17-c03
+      » 0 == 1 » l11-c21
+      » 0 != 1 » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/not_reachable_tractable.c with bound 5
+=============================
+Automaton:
+   not_rechable
+2 variables:
+   x, y
+9 locations:
+   l07-c01, l08-c01, l10-c07, l10-c13, l10-c21, l12-c03, l14-c02, l16-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 10 » l10-c07
+      » x >= 10 » l16-c00
+   l10-c07
+      » y := x » l10-c13
+   l10-c13
+      » y < 0 » l12-c03
+      » y >= 0 » l14-c02
+   l10-c21
+      » y := (y + 1) » l10-c13
+   l12-c03
+      » 0 == 1 » l10-c21
+      » 0 != 1 » ~assert
+   l14-c02
+      » x := (x + 1) » l08-c01
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/not_reachable_tractable.c with bound 25
+=============================
+Automaton:
+   not_rechable
+2 variables:
+   x, y
+9 locations:
+   l07-c01, l08-c01, l10-c07, l10-c13, l10-c21, l12-c03, l14-c02, l16-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 10 » l10-c07
+      » x >= 10 » l16-c00
+   l10-c07
+      » y := x » l10-c13
+   l10-c13
+      » y < 0 » l12-c03
+      » y >= 0 » l14-c02
+   l10-c21
+      » y := (y + 1) » l10-c13
+   l12-c03
+      » 0 == 1 » l10-c21
+      » 0 != 1 » ~assert
+   l14-c02
+      » x := (x + 1) » l08-c01
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/not_reachable_tractable.c with bound 100
+=============================
+Automaton:
+   not_rechable
+2 variables:
+   x, y
+9 locations:
+   l07-c01, l08-c01, l10-c07, l10-c13, l10-c21, l12-c03, l14-c02, l16-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 10 » l10-c07
+      » x >= 10 » l16-c00
+   l10-c07
+      » y := x » l10-c13
+   l10-c13
+      » y < 0 » l12-c03
+      » y >= 0 » l14-c02
+   l10-c21
+      » y := (y + 1) » l10-c13
+   l12-c03
+      » 0 == 1 » l10-c21
+      » 0 != 1 » ~assert
+   l14-c02
+      » x := (x + 1) » l08-c01
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l07-c01: No
+
+=============================
+prg/pigeon.c with bound 5
+=============================
+Automaton:
+   pigeon
+5 variables:
+   pigeon, n1, n2, n3, n4
+17 locations:
+   l08-c01, l09-c01, l10-c01, l11-c01, l12-c01, l14-c01, l15-c02, l16-c02,
+   l17-c03, l19-c03, l20-c04, l22-c04, l23-c05, l25-c05, l26-c02, l28-c00,
+   ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » pigeon := 0 » l09-c01
+   l09-c01
+      » n1 := 0 » l10-c01
+   l10-c01
+      » n2 := 0 » l11-c01
+   l11-c01
+      » n3 := 0 » l12-c01
+   l12-c01
+      » n4 := 0 » l14-c01
+   l14-c01
+      » 1 != 0 » l15-c02
+      » 1 == 0 » l28-c00
+   l15-c02
+      » pigeon := (pigeon + 1) » l16-c02
+   l16-c02
+      » skip » l17-c03
+      » skip » l19-c03
+   l17-c03
+      » n1 := (n1 + 1) » l26-c02
+   l19-c03
+      » skip » l20-c04
+      » skip » l22-c04
+   l20-c04
+      » n2 := (n2 + 1) » l26-c02
+   l22-c04
+      » skip » l23-c05
+      » skip » l25-c05
+   l23-c05
+      » n3 := (n3 + 1) » l26-c02
+   l25-c05
+      » n4 := (n4 + 1) » l26-c02
+   l26-c02
+      » pigeon == (((n1 + n2) + n3) + n4) » l14-c01
+      » pigeon != (((n1 + n2) + n3) + n4) » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/pigeon.c with bound 25
+=============================
+Automaton:
+   pigeon
+5 variables:
+   pigeon, n1, n2, n3, n4
+17 locations:
+   l08-c01, l09-c01, l10-c01, l11-c01, l12-c01, l14-c01, l15-c02, l16-c02,
+   l17-c03, l19-c03, l20-c04, l22-c04, l23-c05, l25-c05, l26-c02, l28-c00,
+   ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » pigeon := 0 » l09-c01
+   l09-c01
+      » n1 := 0 » l10-c01
+   l10-c01
+      » n2 := 0 » l11-c01
+   l11-c01
+      » n3 := 0 » l12-c01
+   l12-c01
+      » n4 := 0 » l14-c01
+   l14-c01
+      » 1 != 0 » l15-c02
+      » 1 == 0 » l28-c00
+   l15-c02
+      » pigeon := (pigeon + 1) » l16-c02
+   l16-c02
+      » skip » l17-c03
+      » skip » l19-c03
+   l17-c03
+      » n1 := (n1 + 1) » l26-c02
+   l19-c03
+      » skip » l20-c04
+      » skip » l22-c04
+   l20-c04
+      » n2 := (n2 + 1) » l26-c02
+   l22-c04
+      » skip » l23-c05
+      » skip » l25-c05
+   l23-c05
+      » n3 := (n3 + 1) » l26-c02
+   l25-c05
+      » n4 := (n4 + 1) » l26-c02
+   l26-c02
+      » pigeon == (((n1 + n2) + n3) + n4) » l14-c01
+      » pigeon != (((n1 + n2) + n3) + n4) » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/pigeon.c with bound 100
+=============================
+Automaton:
+   pigeon
+5 variables:
+   pigeon, n1, n2, n3, n4
+17 locations:
+   l08-c01, l09-c01, l10-c01, l11-c01, l12-c01, l14-c01, l15-c02, l16-c02,
+   l17-c03, l19-c03, l20-c04, l22-c04, l23-c05, l25-c05, l26-c02, l28-c00,
+   ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » pigeon := 0 » l09-c01
+   l09-c01
+      » n1 := 0 » l10-c01
+   l10-c01
+      » n2 := 0 » l11-c01
+   l11-c01
+      » n3 := 0 » l12-c01
+   l12-c01
+      » n4 := 0 » l14-c01
+   l14-c01
+      » 1 != 0 » l15-c02
+      » 1 == 0 » l28-c00
+   l15-c02
+      » pigeon := (pigeon + 1) » l16-c02
+   l16-c02
+      » skip » l17-c03
+      » skip » l19-c03
+   l17-c03
+      » n1 := (n1 + 1) » l26-c02
+   l19-c03
+      » skip » l20-c04
+      » skip » l22-c04
+   l20-c04
+      » n2 := (n2 + 1) » l26-c02
+   l22-c04
+      » skip » l23-c05
+      » skip » l25-c05
+   l23-c05
+      » n3 := (n3 + 1) » l26-c02
+   l25-c05
+      » n4 := (n4 + 1) » l26-c02
+   l26-c02
+      » pigeon == (((n1 + n2) + n3) + n4) » l14-c01
+      » pigeon != (((n1 + n2) + n3) + n4) » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+=============================
+prg/relational.c with bound 5
+=============================
+Automaton:
+   relational
+3 variables:
+   x, y, z
+10 locations:
+   l07-c01, l08-c06, l08-c13, l08-c22, l10-c02, l11-c03, l13-c03, l15-c01,
+   l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c06
+   l08-c06
+      » y := 0 » l08-c13
+   l08-c13
+      » y < z » l10-c02
+      » y >= z » l15-c01
+   l08-c22
+      » y := (y + 1) » l08-c13
+   l10-c02
+      » skip » l11-c03
+      » skip » l13-c03
+   l11-c03
+      » x := (x + 5) » l08-c22
+   l13-c03
+      » x := (x + 3) » l08-c22
+   l15-c01
+      » x > (2 * z) » l16-c00
+      » x <= (2 * z) » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/relational.c with bound 25
+=============================
+Automaton:
+   relational
+3 variables:
+   x, y, z
+10 locations:
+   l07-c01, l08-c06, l08-c13, l08-c22, l10-c02, l11-c03, l13-c03, l15-c01,
+   l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c06
+   l08-c06
+      » y := 0 » l08-c13
+   l08-c13
+      » y < z » l10-c02
+      » y >= z » l15-c01
+   l08-c22
+      » y := (y + 1) » l08-c13
+   l10-c02
+      » skip » l11-c03
+      » skip » l13-c03
+   l11-c03
+      » x := (x + 5) » l08-c22
+   l13-c03
+      » x := (x + 3) » l08-c22
+   l15-c01
+      » x > (2 * z) » l16-c00
+      » x <= (2 * z) » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/relational.c with bound 100
+=============================
+Automaton:
+   relational
+3 variables:
+   x, y, z
+10 locations:
+   l07-c01, l08-c06, l08-c13, l08-c22, l10-c02, l11-c03, l13-c03, l15-c01,
+   l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c06
+   l08-c06
+      » y := 0 » l08-c13
+   l08-c13
+      » y < z » l10-c02
+      » y >= z » l15-c01
+   l08-c22
+      » y := (y + 1) » l08-c13
+   l10-c02
+      » skip » l11-c03
+      » skip » l13-c03
+   l11-c03
+      » x := (x + 5) » l08-c22
+   l13-c03
+      » x := (x + 3) » l08-c22
+   l15-c01
+      » x > (2 * z) » l16-c00
+      » x <= (2 * z) » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/running_example.c with bound 5
+=============================
+Automaton:
+   running
+2 variables:
+   x, y
+10 locations:
+   l07-c01, l08-c01, l09-c02, l11-c02, l13-c03, l14-c03, l16-c01, l17-c01,
+   l18-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c01
+   l08-c01
+      » y <= 10 » l09-c02
+      » y > 10 » l11-c02
+   l09-c02
+      » y := 10 » l16-c01
+   l11-c02
+      » x < y » l13-c03
+      » x >= y » l16-c01
+   l13-c03
+      » x := (2 * x) » l14-c03
+   l14-c03
+      » y := (y - 1) » l11-c02
+   l16-c01
+      » x := (y + 1) » l17-c01
+   l17-c01
+      » x > 0 » l18-c00
+      » x <= 0 » ~assert
+
+Bounded model checking: forward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/running_example.c with bound 25
+=============================
+Automaton:
+   running
+2 variables:
+   x, y
+10 locations:
+   l07-c01, l08-c01, l09-c02, l11-c02, l13-c03, l14-c03, l16-c01, l17-c01,
+   l18-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c01
+   l08-c01
+      » y <= 10 » l09-c02
+      » y > 10 » l11-c02
+   l09-c02
+      » y := 10 » l16-c01
+   l11-c02
+      » x < y » l13-c03
+      » x >= y » l16-c01
+   l13-c03
+      » x := (2 * x) » l14-c03
+   l14-c03
+      » y := (y - 1) » l11-c02
+   l16-c01
+      » x := (y + 1) » l17-c01
+   l17-c01
+      » x > 0 » l18-c00
+      » x <= 0 » ~assert
+
+Bounded model checking: forward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/running_example.c with bound 100
+=============================
+Automaton:
+   running
+2 variables:
+   x, y
+10 locations:
+   l07-c01, l08-c01, l09-c02, l11-c02, l13-c03, l14-c03, l16-c01, l17-c01,
+   l18-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c01
+   l08-c01
+      » y <= 10 » l09-c02
+      » y > 10 » l11-c02
+   l09-c02
+      » y := 10 » l16-c01
+   l11-c02
+      » x < y » l13-c03
+      » x >= y » l16-c01
+   l13-c03
+      » x := (2 * x) » l14-c03
+   l14-c03
+      » y := (y - 1) » l11-c02
+   l16-c01
+      » x := (y + 1) » l17-c01
+   l17-c01
+      » x > 0 » l18-c00
+      » x <= 0 » ~assert
+
+Bounded model checking: forward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+####################
+# Backward Analysis #
+####################
+
+=============================
+aut/another_example.aut with bound 5
+=============================
+Automaton:
+   Another_Example
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 3 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x > y » q_3
+      » x < 0 » q_bad
+   q_3
+      » y := (y + x) » q_4
+   q_4
+      » x := (x - 1) » q_2
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/another_example.aut with bound 25
+=============================
+Automaton:
+   Another_Example
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 3 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x > y » q_3
+      » x < 0 » q_bad
+   q_3
+      » y := (y + x) » q_4
+   q_4
+      » x := (x - 1) » q_2
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/another_example.aut with bound 100
+=============================
+Automaton:
+   Another_Example
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 3 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x > y » q_3
+      » x < 0 » q_bad
+   q_3
+      » y := (y + x) » q_4
+   q_4
+      » x := (x - 1) » q_2
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/big_integers.aut with bound 5
+=============================
+Automaton:
+   Big_Integers
+4 variables:
+   max_int, min_int, y, z
+8 locations:
+   q_0, q_1, q_2, q_bad, q_y_large, q_y_small, q_z_large, q_z_small
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » max_int := 4611686018427387903 » q_1
+   q_1
+      » min_int := (-4611686018427387903 - 1) » q_2
+   q_2
+      » y := (max_int + 1) » q_y_large
+      » z := (2 * max_int) » q_z_large
+      » y := (min_int - 1) » q_y_small
+      » z := (2 * min_int) » q_z_small
+   q_y_large
+      » y <= max_int » q_bad
+   q_y_small
+      » y >= min_int » q_bad
+   q_z_large
+      » z <= max_int » q_bad
+   q_z_small
+      » z >= min_int » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/big_integers.aut with bound 25
+=============================
+Automaton:
+   Big_Integers
+4 variables:
+   max_int, min_int, y, z
+8 locations:
+   q_0, q_1, q_2, q_bad, q_y_large, q_y_small, q_z_large, q_z_small
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » max_int := 4611686018427387903 » q_1
+   q_1
+      » min_int := (-4611686018427387903 - 1) » q_2
+   q_2
+      » y := (max_int + 1) » q_y_large
+      » z := (2 * max_int) » q_z_large
+      » y := (min_int - 1) » q_y_small
+      » z := (2 * min_int) » q_z_small
+   q_y_large
+      » y <= max_int » q_bad
+   q_y_small
+      » y >= min_int » q_bad
+   q_z_large
+      » z <= max_int » q_bad
+   q_z_small
+      » z >= min_int » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/big_integers.aut with bound 100
+=============================
+Automaton:
+   Big_Integers
+4 variables:
+   max_int, min_int, y, z
+8 locations:
+   q_0, q_1, q_2, q_bad, q_y_large, q_y_small, q_z_large, q_z_small
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » max_int := 4611686018427387903 » q_1
+   q_1
+      » min_int := (-4611686018427387903 - 1) » q_2
+   q_2
+      » y := (max_int + 1) » q_y_large
+      » z := (2 * max_int) » q_z_large
+      » y := (min_int - 1) » q_y_small
+      » z := (2 * min_int) » q_z_small
+   q_y_large
+      » y <= max_int » q_bad
+   q_y_small
+      » y >= min_int » q_bad
+   q_z_large
+      » z <= max_int » q_bad
+   q_z_small
+      » z >= min_int » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/congruence_1.aut with bound 5
+=============================
+Automaton:
+   Congruence_1
+3 variables:
+   x, y, z
+10 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := 5 » q_02
+   q_02
+      » x != 5 » q_bad
+      » x < 2 » q_bad
+      » x <= 3 » q_bad
+      » x >= 7 » q_bad
+      » x > 8 » q_bad
+      » (x + 8) != 13 » q_bad
+      » (x - 8) != -3 » q_bad
+      » (0 * x) != 0 » q_bad
+      » (x * 3) != 15 » q_bad
+      » (x / 2) != 2 » q_bad
+      » (x / 3) != 1 » q_bad
+      » (2 / x) != 0 » q_bad
+      » (-7 / x) != -1 » q_bad
+      » (x * y) == 18 » q_bad
+      » (x * y) == 15 » q_03
+   q_03
+      » (y * z) == x » q_bad
+      » ((y * z) - x) == y » q_bad
+      » z := (x + y) » q_04
+      » z := (y + x) » q_04
+      » z == (x + y) » q_04
+      » z := (x - y) » q_05
+      » x == (y + z) » q_05
+      » z := (y - x) » q_06
+      » (x + z) == y » q_06
+      » z := (x * y) » q_07
+      » z := (y * x) » q_07
+      » z := (x / y) » q_08
+      » z := (y / x) » q_09
+   q_04
+      » z == (x - y) » q_bad
+      » ((x * y) * z) <= ((x + y) + z) » q_bad
+      » (z / x) > y » q_bad
+   q_05
+      » ((x + y) + z) != 10 » q_bad
+      » ((x * y) * z) != 30 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_01: No
+
+=============================
+aut/congruence_1.aut with bound 25
+=============================
+Automaton:
+   Congruence_1
+3 variables:
+   x, y, z
+10 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := 5 » q_02
+   q_02
+      » x != 5 » q_bad
+      » x < 2 » q_bad
+      » x <= 3 » q_bad
+      » x >= 7 » q_bad
+      » x > 8 » q_bad
+      » (x + 8) != 13 » q_bad
+      » (x - 8) != -3 » q_bad
+      » (0 * x) != 0 » q_bad
+      » (x * 3) != 15 » q_bad
+      » (x / 2) != 2 » q_bad
+      » (x / 3) != 1 » q_bad
+      » (2 / x) != 0 » q_bad
+      » (-7 / x) != -1 » q_bad
+      » (x * y) == 18 » q_bad
+      » (x * y) == 15 » q_03
+   q_03
+      » (y * z) == x » q_bad
+      » ((y * z) - x) == y » q_bad
+      » z := (x + y) » q_04
+      » z := (y + x) » q_04
+      » z == (x + y) » q_04
+      » z := (x - y) » q_05
+      » x == (y + z) » q_05
+      » z := (y - x) » q_06
+      » (x + z) == y » q_06
+      » z := (x * y) » q_07
+      » z := (y * x) » q_07
+      » z := (x / y) » q_08
+      » z := (y / x) » q_09
+   q_04
+      » z == (x - y) » q_bad
+      » ((x * y) * z) <= ((x + y) + z) » q_bad
+      » (z / x) > y » q_bad
+   q_05
+      » ((x + y) + z) != 10 » q_bad
+      » ((x * y) * z) != 30 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_01: No
+
+=============================
+aut/congruence_1.aut with bound 100
+=============================
+Automaton:
+   Congruence_1
+3 variables:
+   x, y, z
+10 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := 5 » q_02
+   q_02
+      » x != 5 » q_bad
+      » x < 2 » q_bad
+      » x <= 3 » q_bad
+      » x >= 7 » q_bad
+      » x > 8 » q_bad
+      » (x + 8) != 13 » q_bad
+      » (x - 8) != -3 » q_bad
+      » (0 * x) != 0 » q_bad
+      » (x * 3) != 15 » q_bad
+      » (x / 2) != 2 » q_bad
+      » (x / 3) != 1 » q_bad
+      » (2 / x) != 0 » q_bad
+      » (-7 / x) != -1 » q_bad
+      » (x * y) == 18 » q_bad
+      » (x * y) == 15 » q_03
+   q_03
+      » (y * z) == x » q_bad
+      » ((y * z) - x) == y » q_bad
+      » z := (x + y) » q_04
+      » z := (y + x) » q_04
+      » z == (x + y) » q_04
+      » z := (x - y) » q_05
+      » x == (y + z) » q_05
+      » z := (y - x) » q_06
+      » (x + z) == y » q_06
+      » z := (x * y) » q_07
+      » z := (y * x) » q_07
+      » z := (x / y) » q_08
+      » z := (y / x) » q_09
+   q_04
+      » z == (x - y) » q_bad
+      » ((x * y) * z) <= ((x + y) + z) » q_bad
+      » (z / x) > y » q_bad
+   q_05
+      » ((x + y) + z) != 10 » q_bad
+      » ((x * y) * z) != 30 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_01: No
+
+=============================
+aut/congruence_2.aut with bound 5
+=============================
+Automaton:
+   Congruence_2
+3 variables:
+   x, y, z
+14 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_10, q_11, 
+   q_12, q_13, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := -9 » q_02
+      » x := 3 » q_02
+   q_02
+      » y := 10 » q_03
+      » y := 18 » q_03
+   q_03
+      » x := (x + 12) » q_03
+      » x := ((x + (3 * y)) - 6) » q_03
+      » y := (y - 8) » q_03
+      » x == y » q_bad
+      » (x - 1) == y » q_04
+      » x == (6 * z) » q_bad
+      » y == (4 * z) » q_bad
+      » (x + y) == (2 * z) » q_bad
+      » z := (x + y) » q_05
+      » z := (y - x) » q_06
+      » z := (x * y) » q_07
+      » z := (x / y) » q_08
+      » z := (5 / y) » q_09
+      » z := (7 / (x - 1)) » q_10
+   q_05
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_06
+      » ((x + y) + z) == 2 » q_bad
+      » ((x * y) * z) == 2 » q_bad
+   q_07
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_08
+      » (x * y) == 12 » q_bad
+   q_09
+      » z := (z + 2) » q_09
+      » z == 1 » q_bad
+   q_10
+      » y == z » q_11
+      » (x + y) == z » q_12
+      » (x + (y * (1 + z))) == -1 » q_13
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_01: Unknown
+
+=============================
+aut/congruence_2.aut with bound 25
+=============================
+Automaton:
+   Congruence_2
+3 variables:
+   x, y, z
+14 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_10, q_11, 
+   q_12, q_13, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := -9 » q_02
+      » x := 3 » q_02
+   q_02
+      » y := 10 » q_03
+      » y := 18 » q_03
+   q_03
+      » x := (x + 12) » q_03
+      » x := ((x + (3 * y)) - 6) » q_03
+      » y := (y - 8) » q_03
+      » x == y » q_bad
+      » (x - 1) == y » q_04
+      » x == (6 * z) » q_bad
+      » y == (4 * z) » q_bad
+      » (x + y) == (2 * z) » q_bad
+      » z := (x + y) » q_05
+      » z := (y - x) » q_06
+      » z := (x * y) » q_07
+      » z := (x / y) » q_08
+      » z := (5 / y) » q_09
+      » z := (7 / (x - 1)) » q_10
+   q_05
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_06
+      » ((x + y) + z) == 2 » q_bad
+      » ((x * y) * z) == 2 » q_bad
+   q_07
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_08
+      » (x * y) == 12 » q_bad
+   q_09
+      » z := (z + 2) » q_09
+      » z == 1 » q_bad
+   q_10
+      » y == z » q_11
+      » (x + y) == z » q_12
+      » (x + (y * (1 + z))) == -1 » q_13
+
+Bounded model checking: backward, depth <= 25
+
+=============================
+aut/congruence_2.aut with bound 100
+=============================
+Automaton:
+   Congruence_2
+3 variables:
+   x, y, z
+14 locations:
+   q_01, q_02, q_03, q_04, q_05, q_06, q_07, q_08, q_09, q_10, q_11, 
+   q_12, q_13, q_bad
+Initial location:
+   q_01
+Final location:
+   q_bad
+Transitions:
+   q_01
+      » x := -9 » q_02
+      » x := 3 » q_02
+   q_02
+      » y := 10 » q_03
+      » y := 18 » q_03
+   q_03
+      » x := (x + 12) » q_03
+      » x := ((x + (3 * y)) - 6) » q_03
+      » y := (y - 8) » q_03
+      » x == y » q_bad
+      » (x - 1) == y » q_04
+      » x == (6 * z) » q_bad
+      » y == (4 * z) » q_bad
+      » (x + y) == (2 * z) » q_bad
+      » z := (x + y) » q_05
+      » z := (y - x) » q_06
+      » z := (x * y) » q_07
+      » z := (x / y) » q_08
+      » z := (5 / y) » q_09
+      » z := (7 / (x - 1)) » q_10
+   q_05
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_06
+      » ((x + y) + z) == 2 » q_bad
+      » ((x * y) * z) == 2 » q_bad
+   q_07
+      » ((x + y) + z) == 0 » q_bad
+      » ((x * y) * z) == 0 » q_bad
+   q_08
+      » (x * y) == 12 » q_bad
+   q_09
+      » z := (z + 2) » q_09
+      » z == 1 » q_bad
+   q_10
+      » y == z » q_11
+      » (x + y) == z » q_12
+      » (x + (y * (1 + z))) == -1 » q_13
+
+Bounded model checking: backward, depth <= 100
+
+=============================
+aut/constant_propagation.aut with bound 5
+=============================
+Automaton:
+   Constant_Propagation
+3 variables:
+   x, y, z
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 1 » q_1
+      » x := 2 » q_2
+   q_1
+      » y := 2 » q_3
+   q_2
+      » y := 1 » q_3
+   q_3
+      » z := (x + y) » q_4
+   q_4
+      » z != 3 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/constant_propagation.aut with bound 25
+=============================
+Automaton:
+   Constant_Propagation
+3 variables:
+   x, y, z
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 1 » q_1
+      » x := 2 » q_2
+   q_1
+      » y := 2 » q_3
+   q_2
+      » y := 1 » q_3
+   q_3
+      » z := (x + y) » q_4
+   q_4
+      » z != 3 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/constant_propagation.aut with bound 100
+=============================
+Automaton:
+   Constant_Propagation
+3 variables:
+   x, y, z
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 1 » q_1
+      » x := 2 » q_2
+   q_1
+      » y := 2 » q_3
+   q_2
+      » y := 1 » q_3
+   q_3
+      » z := (x + y) » q_4
+   q_4
+      » z != 3 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/division_by_zero.aut with bound 5
+=============================
+Automaton:
+   Division_by_Zero
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_bad, q_bad'
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x <= (3 / 0) » q_bad'
+      » x := -1 » q_1
+      » x := (x / (y + 2)) » q_2
+      » (x / y) > 3 » q_3
+   q_1
+      » y := (3 / (x + 1)) » q_bad'
+   q_2
+      » y == -2 » q_bad
+   q_3
+      » y == 0 » q_bad
+   q_bad'
+      » skip » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/division_by_zero.aut with bound 25
+=============================
+Automaton:
+   Division_by_Zero
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_bad, q_bad'
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x <= (3 / 0) » q_bad'
+      » x := -1 » q_1
+      » x := (x / (y + 2)) » q_2
+      » (x / y) > 3 » q_3
+   q_1
+      » y := (3 / (x + 1)) » q_bad'
+   q_2
+      » y == -2 » q_bad
+   q_3
+      » y == 0 » q_bad
+   q_bad'
+      » skip » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/division_by_zero.aut with bound 100
+=============================
+Automaton:
+   Division_by_Zero
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_bad, q_bad'
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x <= (3 / 0) » q_bad'
+      » x := -1 » q_1
+      » x := (x / (y + 2)) » q_2
+      » (x / y) > 3 » q_3
+   q_1
+      » y := (3 / (x + 1)) » q_bad'
+   q_2
+      » y == -2 » q_bad
+   q_3
+      » y == 0 » q_bad
+   q_bad'
+      » skip » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/inductive_invariants_exercise_1.aut with bound 5
+=============================
+Automaton:
+   Exercise_1
+2 variables:
+   x, y
+3 locations:
+   q_0, q_1, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » x := (x * y) » q_1
+      » x := (x + 3) » q_1
+      » x == 10 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/inductive_invariants_exercise_1.aut with bound 25
+=============================
+Automaton:
+   Exercise_1
+2 variables:
+   x, y
+3 locations:
+   q_0, q_1, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » x := (x * y) » q_1
+      » x := (x + 3) » q_1
+      » x == 10 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+=============================
+aut/inductive_invariants_exercise_1.aut with bound 100
+=============================
+Automaton:
+   Exercise_1
+2 variables:
+   x, y
+3 locations:
+   q_0, q_1, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » x := (x * y) » q_1
+      » x := (x + 3) » q_1
+      » x == 10 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+=============================
+aut/inductive_invariants_exercise_2.aut with bound 5
+=============================
+Automaton:
+   Exercise_2
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » y > 0 » q_1
+   q_1
+      » x := 0 » q_2
+   q_2
+      » x := (x + y) » q_3
+      » y == 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/inductive_invariants_exercise_2.aut with bound 25
+=============================
+Automaton:
+   Exercise_2
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » y > 0 » q_1
+   q_1
+      » x := 0 » q_2
+   q_2
+      » x := (x + y) » q_3
+      » y == 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/inductive_invariants_exercise_2.aut with bound 100
+=============================
+Automaton:
+   Exercise_2
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » y > 0 » q_1
+   q_1
+      » x := 0 » q_2
+   q_2
+      » x := (x + y) » q_3
+      » y == 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/inductive_invariant_simple.aut with bound 5
+=============================
+Automaton:
+   Example
+1 variables:
+   x
+3 locations:
+   A, B, C
+Initial location:
+   A
+Final location:
+   C
+Transitions:
+   A
+      » x := 1 » B
+   B
+      » x := (5 * x) » B
+      » x := (x + 2) » B
+      » x < 0 » C
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location C reachable from initial location A: Unknown
+
+=============================
+aut/inductive_invariant_simple.aut with bound 25
+=============================
+Automaton:
+   Example
+1 variables:
+   x
+3 locations:
+   A, B, C
+Initial location:
+   A
+Final location:
+   C
+Transitions:
+   A
+      » x := 1 » B
+   B
+      » x := (5 * x) » B
+      » x := (x + 2) » B
+      » x < 0 » C
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location C reachable from initial location A: Unknown
+
+=============================
+aut/inductive_invariant_simple.aut with bound 100
+=============================
+Automaton:
+   Example
+1 variables:
+   x
+3 locations:
+   A, B, C
+Initial location:
+   A
+Final location:
+   C
+Transitions:
+   A
+      » x := 1 » B
+   B
+      » x := (5 * x) » B
+      » x := (x + 2) » B
+      » x < 0 » C
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location C reachable from initial location A: Unknown
+
+=============================
+aut/infinite_descent.aut with bound 5
+=============================
+Automaton:
+   Infinite_Descent
+1 variables:
+   x
+4 locations:
+   q_0, q_1, q_2, r
+Initial location:
+   q_0
+Final location:
+   r
+Transitions:
+   q_0
+      » skip » q_2
+      » x := 0 » q_1
+   q_1
+      » x == 3 » r
+   q_2
+      » x := 1 » q_1
+   r
+      » x := (x + 1) » r
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location r reachable from initial location q_0: Unknown
+
+=============================
+aut/infinite_descent.aut with bound 25
+=============================
+Automaton:
+   Infinite_Descent
+1 variables:
+   x
+4 locations:
+   q_0, q_1, q_2, r
+Initial location:
+   q_0
+Final location:
+   r
+Transitions:
+   q_0
+      » skip » q_2
+      » x := 0 » q_1
+   q_1
+      » x == 3 » r
+   q_2
+      » x := 1 » q_1
+   r
+      » x := (x + 1) » r
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location r reachable from initial location q_0: Unknown
+
+=============================
+aut/infinite_descent.aut with bound 100
+=============================
+Automaton:
+   Infinite_Descent
+1 variables:
+   x
+4 locations:
+   q_0, q_1, q_2, r
+Initial location:
+   q_0
+Final location:
+   r
+Transitions:
+   q_0
+      » skip » q_2
+      » x := 0 » q_1
+   q_1
+      » x == 3 » r
+   q_2
+      » x := 1 » q_1
+   r
+      » x := (x + 1) » r
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location r reachable from initial location q_0: Unknown
+
+=============================
+aut/negative_division.aut with bound 5
+=============================
+Automaton:
+   Negative_Division
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := -5 » q_1
+   q_1
+      » y := (x / 2) » q_2
+   q_2
+      » y != -2 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/negative_division.aut with bound 25
+=============================
+Automaton:
+   Negative_Division
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := -5 » q_1
+   q_1
+      » y := (x / 2) » q_2
+   q_2
+      » y != -2 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/negative_division.aut with bound 100
+=============================
+Automaton:
+   Negative_Division
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := -5 » q_1
+   q_1
+      » y := (x / 2) » q_2
+   q_2
+      » y != -2 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/predicates-01.aut with bound 5
+=============================
+Automaton:
+   Predicates_1
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x := (x + 1) » q_3
+      » x > 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » (x + y) < 0 » q_bad
+      » (x + y) > 0 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/predicates-01.aut with bound 25
+=============================
+Automaton:
+   Predicates_1
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x := (x + 1) » q_3
+      » x > 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » (x + y) < 0 » q_bad
+      » (x + y) > 0 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/predicates-01.aut with bound 100
+=============================
+Automaton:
+   Predicates_1
+2 variables:
+   x, y
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 0 » q_1
+   q_1
+      » y := 0 » q_2
+   q_2
+      » x := (x + 1) » q_3
+      » x > 0 » q_4
+   q_3
+      » y := (y - 1) » q_2
+   q_4
+      » (x + y) < 0 » q_bad
+      » (x + y) > 0 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/predicates-02.aut with bound 5
+=============================
+Automaton:
+   Predicates_2
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+   q_1
+      » y := x » q_2
+   q_2
+      » y < 0 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/predicates-02.aut with bound 25
+=============================
+Automaton:
+   Predicates_2
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+   q_1
+      » y := x » q_2
+   q_2
+      » y < 0 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/predicates-02.aut with bound 100
+=============================
+Automaton:
+   Predicates_2
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+   q_1
+      » y := x » q_2
+   q_2
+      » y < 0 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/pre_only.aut with bound 5
+=============================
+Automaton:
+   Pre_Only
+3 variables:
+   x, y, z
+5 locations:
+   q_0, q_1, q_2, q_3, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » (x * y) >= 0 » q_1
+   q_1
+      » z := y » q_2
+   q_2
+      » x < 0 » q_3
+   q_3
+      » z >= 3 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/pre_only.aut with bound 25
+=============================
+Automaton:
+   Pre_Only
+3 variables:
+   x, y, z
+5 locations:
+   q_0, q_1, q_2, q_3, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » (x * y) >= 0 » q_1
+   q_1
+      » z := y » q_2
+   q_2
+      » x < 0 » q_3
+   q_3
+      » z >= 3 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/pre_only.aut with bound 100
+=============================
+Automaton:
+   Pre_Only
+3 variables:
+   x, y, z
+5 locations:
+   q_0, q_1, q_2, q_3, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » (x * y) >= 0 » q_1
+   q_1
+      » z := y » q_2
+   q_2
+      » x < 0 » q_3
+   q_3
+      » z >= 3 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_bad reachable from initial location q_0: No
+
+=============================
+aut/running_example.aut with bound 5
+=============================
+Automaton:
+   Running_Example
+2 variables:
+   x, y
+9 locations:
+   q_01, q_02, q_03, q_06, q_07, q_08, q_11, q_12, q_13
+Initial location:
+   q_01
+Final location:
+   q_13
+Transitions:
+   q_01
+      » x := 1 » q_02
+   q_02
+      » y <= 10 » q_03
+      » y > 10 » q_06
+   q_03
+      » y := 10 » q_11
+   q_06
+      » x < y » q_07
+      » x >= y » q_11
+   q_07
+      » x := (2 * x) » q_08
+   q_08
+      » y := (y - 1) » q_06
+   q_11
+      » x := (y + 1) » q_12
+   q_12
+      » x <= 0 » q_13
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_13 reachable from initial location q_01: Unknown
+
+=============================
+aut/running_example.aut with bound 25
+=============================
+Automaton:
+   Running_Example
+2 variables:
+   x, y
+9 locations:
+   q_01, q_02, q_03, q_06, q_07, q_08, q_11, q_12, q_13
+Initial location:
+   q_01
+Final location:
+   q_13
+Transitions:
+   q_01
+      » x := 1 » q_02
+   q_02
+      » y <= 10 » q_03
+      » y > 10 » q_06
+   q_03
+      » y := 10 » q_11
+   q_06
+      » x < y » q_07
+      » x >= y » q_11
+   q_07
+      » x := (2 * x) » q_08
+   q_08
+      » y := (y - 1) » q_06
+   q_11
+      » x := (y + 1) » q_12
+   q_12
+      » x <= 0 » q_13
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location q_13 reachable from initial location q_01: No
+
+=============================
+aut/running_example.aut with bound 100
+=============================
+Automaton:
+   Running_Example
+2 variables:
+   x, y
+9 locations:
+   q_01, q_02, q_03, q_06, q_07, q_08, q_11, q_12, q_13
+Initial location:
+   q_01
+Final location:
+   q_13
+Transitions:
+   q_01
+      » x := 1 » q_02
+   q_02
+      » y <= 10 » q_03
+      » y > 10 » q_06
+   q_03
+      » y := 10 » q_11
+   q_06
+      » x < y » q_07
+      » x >= y » q_11
+   q_07
+      » x := (2 * x) » q_08
+   q_08
+      » y := (y - 1) » q_06
+   q_11
+      » x := (y + 1) » q_12
+   q_12
+      » x <= 0 » q_13
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location q_13 reachable from initial location q_01: No
+
+=============================
+aut/sign_nonzero_crucial.aut with bound 5
+=============================
+Automaton:
+   Sign_Nonzero
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+      » x < 0 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial.aut with bound 25
+=============================
+Automaton:
+   Sign_Nonzero
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+      » x < 0 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial.aut with bound 100
+=============================
+Automaton:
+   Sign_Nonzero
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x >= 0 » q_1
+      » x < 0 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial_variant.aut with bound 5
+=============================
+Automaton:
+   Sign_Nonzero_Variant
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 2 » q_1
+      » x := -3 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial_variant.aut with bound 25
+=============================
+Automaton:
+   Sign_Nonzero_Variant
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 2 » q_1
+      » x := -3 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/sign_nonzero_crucial_variant.aut with bound 100
+=============================
+Automaton:
+   Sign_Nonzero_Variant
+1 variables:
+   x
+6 locations:
+   q_0, q_1, q_2, q_3, q_4, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x := 2 » q_1
+      » x := -3 » q_3
+   q_1
+      » x < 10 » q_2
+      » x >= 10 » q_4
+   q_2
+      » x := (x + 1) » q_1
+   q_3
+      » x := (x - 1) » q_3
+      » x <= 10 » q_4
+   q_4
+      » x == 0 » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/single_path_hard_for_z3.aut with bound 5
+=============================
+Automaton:
+   Single_Path_Hard_for_Z3
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x == (3 * (x / 3)) » q_1
+   q_1
+      » x := (x * y) » q_2
+   q_2
+      » (x - 1) == (3 * (x / 3)) » q_bad
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/single_path_hard_for_z3.aut with bound 25
+=============================
+Automaton:
+   Single_Path_Hard_for_Z3
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x == (3 * (x / 3)) » q_1
+   q_1
+      » x := (x * y) » q_2
+   q_2
+      » (x - 1) == (3 * (x / 3)) » q_bad
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+aut/single_path_hard_for_z3.aut with bound 100
+=============================
+Automaton:
+   Single_Path_Hard_for_Z3
+2 variables:
+   x, y
+4 locations:
+   q_0, q_1, q_2, q_bad
+Initial location:
+   q_0
+Final location:
+   q_bad
+Transitions:
+   q_0
+      » x == (3 * (x / 3)) » q_1
+   q_1
+      » x := (x * y) » q_2
+   q_2
+      » (x - 1) == (3 * (x / 3)) » q_bad
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location q_bad reachable from initial location q_0: Unknown
+
+=============================
+prg/bfs_shorter.c with bound 5
+=============================
+Automaton:
+   bfs_sorter
+1 variables:
+   x
+8 locations:
+   l07-c01, l08-c01, l10-c02, l12-c03, l16-c03, l18-c02, l20-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » 1 != 0 » l10-c02
+      » 1 == 0 » l20-c00
+   l10-c02
+      » skip » l12-c03
+      » skip » l16-c03
+   l12-c03
+      » skip » l18-c02
+   l16-c03
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » x <= 10 » l08-c01
+      » x > 10 » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/bfs_shorter.c with bound 25
+=============================
+Automaton:
+   bfs_sorter
+1 variables:
+   x
+8 locations:
+   l07-c01, l08-c01, l10-c02, l12-c03, l16-c03, l18-c02, l20-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » 1 != 0 » l10-c02
+      » 1 == 0 » l20-c00
+   l10-c02
+      » skip » l12-c03
+      » skip » l16-c03
+   l12-c03
+      » skip » l18-c02
+   l16-c03
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » x <= 10 » l08-c01
+      » x > 10 » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/bfs_shorter.c with bound 100
+=============================
+Automaton:
+   bfs_sorter
+1 variables:
+   x
+8 locations:
+   l07-c01, l08-c01, l10-c02, l12-c03, l16-c03, l18-c02, l20-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » 1 != 0 » l10-c02
+      » 1 == 0 » l20-c00
+   l10-c02
+      » skip » l12-c03
+      » skip » l16-c03
+   l12-c03
+      » skip » l18-c02
+   l16-c03
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » x <= 10 » l08-c01
+      » x > 10 » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path (of length 45):
+   l07-c01
+      » x := 0 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x <= 10 »
+   l08-c01
+      » 1 != 0 »
+   l10-c02
+      » skip »
+   l16-c03
+      » x := (x + 1) »
+   l18-c02
+      » x > 10 »
+   ~assert
+
+Final location ~assert reachable from initial location l07-c01: Yes
+
+=============================
+prg/bin_sum.c with bound 5
+=============================
+Automaton:
+   bin_sum
+4 variables:
+   x, y, zbin, zun
+17 locations:
+   l07-c01, l09-c01, l11-c01, l12-c02, l13-c02, l16-c01, l17-c02, l18-c02,
+   l21-c01, l22-c02, l23-c02, l26-c01, l27-c02, l28-c02, l31-c01, l32-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » zbin := (x + y) » l09-c01
+   l09-c01
+      » zun := 0 » l11-c01
+   l11-c01
+      » x > 0 » l12-c02
+      » x <= 0 » l16-c01
+   l12-c02
+      » x := (x - 1) » l13-c02
+   l13-c02
+      » zun := (zun + 1) » l11-c01
+   l16-c01
+      » x < 0 » l17-c02
+      » x >= 0 » l21-c01
+   l17-c02
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » zun := (zun - 1) » l16-c01
+   l21-c01
+      » y > 0 » l22-c02
+      » y <= 0 » l26-c01
+   l22-c02
+      » y := (y - 1) » l23-c02
+   l23-c02
+      » zun := (zun + 1) » l21-c01
+   l26-c01
+      » y < 0 » l27-c02
+      » y >= 0 » l31-c01
+   l27-c02
+      » y := (y + 1) » l28-c02
+   l28-c02
+      » zun := (zun - 1) » l26-c01
+   l31-c01
+      » zbin == zun » l32-c00
+      » zbin != zun » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/bin_sum.c with bound 25
+=============================
+Automaton:
+   bin_sum
+4 variables:
+   x, y, zbin, zun
+17 locations:
+   l07-c01, l09-c01, l11-c01, l12-c02, l13-c02, l16-c01, l17-c02, l18-c02,
+   l21-c01, l22-c02, l23-c02, l26-c01, l27-c02, l28-c02, l31-c01, l32-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » zbin := (x + y) » l09-c01
+   l09-c01
+      » zun := 0 » l11-c01
+   l11-c01
+      » x > 0 » l12-c02
+      » x <= 0 » l16-c01
+   l12-c02
+      » x := (x - 1) » l13-c02
+   l13-c02
+      » zun := (zun + 1) » l11-c01
+   l16-c01
+      » x < 0 » l17-c02
+      » x >= 0 » l21-c01
+   l17-c02
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » zun := (zun - 1) » l16-c01
+   l21-c01
+      » y > 0 » l22-c02
+      » y <= 0 » l26-c01
+   l22-c02
+      » y := (y - 1) » l23-c02
+   l23-c02
+      » zun := (zun + 1) » l21-c01
+   l26-c01
+      » y < 0 » l27-c02
+      » y >= 0 » l31-c01
+   l27-c02
+      » y := (y + 1) » l28-c02
+   l28-c02
+      » zun := (zun - 1) » l26-c01
+   l31-c01
+      » zbin == zun » l32-c00
+      » zbin != zun » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/bin_sum.c with bound 100
+=============================
+Automaton:
+   bin_sum
+4 variables:
+   x, y, zbin, zun
+17 locations:
+   l07-c01, l09-c01, l11-c01, l12-c02, l13-c02, l16-c01, l17-c02, l18-c02,
+   l21-c01, l22-c02, l23-c02, l26-c01, l27-c02, l28-c02, l31-c01, l32-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » zbin := (x + y) » l09-c01
+   l09-c01
+      » zun := 0 » l11-c01
+   l11-c01
+      » x > 0 » l12-c02
+      » x <= 0 » l16-c01
+   l12-c02
+      » x := (x - 1) » l13-c02
+   l13-c02
+      » zun := (zun + 1) » l11-c01
+   l16-c01
+      » x < 0 » l17-c02
+      » x >= 0 » l21-c01
+   l17-c02
+      » x := (x + 1) » l18-c02
+   l18-c02
+      » zun := (zun - 1) » l16-c01
+   l21-c01
+      » y > 0 » l22-c02
+      » y <= 0 » l26-c01
+   l22-c02
+      » y := (y - 1) » l23-c02
+   l23-c02
+      » zun := (zun + 1) » l21-c01
+   l26-c01
+      » y < 0 » l27-c02
+      » y >= 0 » l31-c01
+   l27-c02
+      » y := (y + 1) » l28-c02
+   l28-c02
+      » zun := (zun - 1) » l26-c01
+   l31-c01
+      » zbin == zun » l32-c00
+      » zbin != zun » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+=============================
+prg/classic_for_loop.c with bound 5
+=============================
+Automaton:
+   classic
+1 variables:
+   x
+6 locations:
+   l08-c06, l08-c12, l08-c23, l09-c01, l10-c00, ~assert
+Initial location:
+   l08-c06
+Final location:
+   ~assert
+Transitions:
+   l08-c06
+      » x := 1 » l08-c12
+   l08-c12
+      » x <= 100 » l08-c23
+      » x > 100 » l09-c01
+   l08-c23
+      » x := (x + 1) » l08-c12
+   l09-c01
+      » x < 150 » l10-c00
+      » x >= 150 » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l08-c06: No
+
+=============================
+prg/classic_for_loop.c with bound 25
+=============================
+Automaton:
+   classic
+1 variables:
+   x
+6 locations:
+   l08-c06, l08-c12, l08-c23, l09-c01, l10-c00, ~assert
+Initial location:
+   l08-c06
+Final location:
+   ~assert
+Transitions:
+   l08-c06
+      » x := 1 » l08-c12
+   l08-c12
+      » x <= 100 » l08-c23
+      » x > 100 » l09-c01
+   l08-c23
+      » x := (x + 1) » l08-c12
+   l09-c01
+      » x < 150 » l10-c00
+      » x >= 150 » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l08-c06: No
+
+=============================
+prg/classic_for_loop.c with bound 100
+=============================
+Automaton:
+   classic
+1 variables:
+   x
+6 locations:
+   l08-c06, l08-c12, l08-c23, l09-c01, l10-c00, ~assert
+Initial location:
+   l08-c06
+Final location:
+   ~assert
+Transitions:
+   l08-c06
+      » x := 1 » l08-c12
+   l08-c12
+      » x <= 100 » l08-c23
+      » x > 100 » l09-c01
+   l08-c23
+      » x := (x + 1) » l08-c12
+   l09-c01
+      » x < 150 » l10-c00
+      » x >= 150 » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l08-c06: No
+
+=============================
+prg/dichotomy.c with bound 5
+=============================
+Automaton:
+   dichotomy
+2 variables:
+   x, y
+8 locations:
+   l08-c01, l09-c02, l10-c03, l11-c04, l13-c04, l15-c02, l17-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x < y » l09-c02
+      » x >= y » l17-c00
+   l09-c02
+      » x < y » l10-c03
+      » x >= y » l15-c02
+   l10-c03
+      » skip » l11-c04
+      » skip » l13-c04
+   l11-c04
+      » x := ((x + y) / 2) » l09-c02
+   l13-c04
+      » y := ((x + y) / 2) » l09-c02
+   l15-c02
+      » x == y » l17-c00
+      » x != y » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l08-c01: No
+
+=============================
+prg/dichotomy.c with bound 25
+=============================
+Automaton:
+   dichotomy
+2 variables:
+   x, y
+8 locations:
+   l08-c01, l09-c02, l10-c03, l11-c04, l13-c04, l15-c02, l17-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x < y » l09-c02
+      » x >= y » l17-c00
+   l09-c02
+      » x < y » l10-c03
+      » x >= y » l15-c02
+   l10-c03
+      » skip » l11-c04
+      » skip » l13-c04
+   l11-c04
+      » x := ((x + y) / 2) » l09-c02
+   l13-c04
+      » y := ((x + y) / 2) » l09-c02
+   l15-c02
+      » x == y » l17-c00
+      » x != y » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l08-c01: No
+
+=============================
+prg/dichotomy.c with bound 100
+=============================
+Automaton:
+   dichotomy
+2 variables:
+   x, y
+8 locations:
+   l08-c01, l09-c02, l10-c03, l11-c04, l13-c04, l15-c02, l17-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x < y » l09-c02
+      » x >= y » l17-c00
+   l09-c02
+      » x < y » l10-c03
+      » x >= y » l15-c02
+   l10-c03
+      » skip » l11-c04
+      » skip » l13-c04
+   l11-c04
+      » x := ((x + y) / 2) » l09-c02
+   l13-c04
+      » y := ((x + y) / 2) » l09-c02
+   l15-c02
+      » x == y » l17-c00
+      » x != y » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l08-c01: No
+
+=============================
+prg/division.c with bound 5
+=============================
+Automaton:
+   division
+2 variables:
+   x, y
+8 locations:
+   l05-c04, l06-c04, l07-c04, l08-c08, l09-c08, l10-c08, l12-c00, ~assert
+Initial location:
+   l05-c04
+Final location:
+   ~assert
+Transitions:
+   l05-c04
+      » x := 30 » l06-c04
+   l06-c04
+      » y := 10 » l07-c04
+   l07-c04
+      » x > 1 » l08-c08
+      » x <= 1 » l12-c00
+   l08-c08
+      » x := (x / y) » l09-c08
+   l09-c08
+      » y := (y + 1) » l10-c08
+   l10-c08
+      » x < y » l07-c04
+      » x >= y » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l05-c04: Unknown
+
+=============================
+prg/division.c with bound 25
+=============================
+Automaton:
+   division
+2 variables:
+   x, y
+8 locations:
+   l05-c04, l06-c04, l07-c04, l08-c08, l09-c08, l10-c08, l12-c00, ~assert
+Initial location:
+   l05-c04
+Final location:
+   ~assert
+Transitions:
+   l05-c04
+      » x := 30 » l06-c04
+   l06-c04
+      » y := 10 » l07-c04
+   l07-c04
+      » x > 1 » l08-c08
+      » x <= 1 » l12-c00
+   l08-c08
+      » x := (x / y) » l09-c08
+   l09-c08
+      » y := (y + 1) » l10-c08
+   l10-c08
+      » x < y » l07-c04
+      » x >= y » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l05-c04: No
+
+=============================
+prg/division.c with bound 100
+=============================
+Automaton:
+   division
+2 variables:
+   x, y
+8 locations:
+   l05-c04, l06-c04, l07-c04, l08-c08, l09-c08, l10-c08, l12-c00, ~assert
+Initial location:
+   l05-c04
+Final location:
+   ~assert
+Transitions:
+   l05-c04
+      » x := 30 » l06-c04
+   l06-c04
+      » y := 10 » l07-c04
+   l07-c04
+      » x > 1 » l08-c08
+      » x <= 1 » l12-c00
+   l08-c08
+      » x := (x / y) » l09-c08
+   l09-c08
+      » y := (y + 1) » l10-c08
+   l10-c08
+      » x < y » l07-c04
+      » x >= y » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l05-c04: No
+
+=============================
+prg/locking.c with bound 5
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+11 locations:
+   l09-c01, l10-c01, l13-c02, l14-c02, l15-c02, l16-c02, l19-c03, l20-c03,
+   l21-c03, l24-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new != old » l13-c02
+      » new == old » l24-c00
+   l13-c02
+      » L == 0 » l14-c02
+      » L != 0 » ~assert
+   l14-c02
+      » L := 1 » l15-c02
+   l15-c02
+      » old := new » l16-c02
+   l16-c02
+      » skip » l19-c03
+      » skip » l10-c01
+   l19-c03
+      » L == 1 » l20-c03
+      » L != 1 » ~assert
+   l20-c03
+      » L := 0 » l21-c03
+   l21-c03
+      » new := (new + 1) » l10-c01
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l09-c01: No
+
+=============================
+prg/locking.c with bound 25
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+11 locations:
+   l09-c01, l10-c01, l13-c02, l14-c02, l15-c02, l16-c02, l19-c03, l20-c03,
+   l21-c03, l24-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new != old » l13-c02
+      » new == old » l24-c00
+   l13-c02
+      » L == 0 » l14-c02
+      » L != 0 » ~assert
+   l14-c02
+      » L := 1 » l15-c02
+   l15-c02
+      » old := new » l16-c02
+   l16-c02
+      » skip » l19-c03
+      » skip » l10-c01
+   l19-c03
+      » L == 1 » l20-c03
+      » L != 1 » ~assert
+   l20-c03
+      » L := 0 » l21-c03
+   l21-c03
+      » new := (new + 1) » l10-c01
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l09-c01: No
+
+=============================
+prg/locking.c with bound 100
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+11 locations:
+   l09-c01, l10-c01, l13-c02, l14-c02, l15-c02, l16-c02, l19-c03, l20-c03,
+   l21-c03, l24-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new != old » l13-c02
+      » new == old » l24-c00
+   l13-c02
+      » L == 0 » l14-c02
+      » L != 0 » ~assert
+   l14-c02
+      » L := 1 » l15-c02
+   l15-c02
+      » old := new » l16-c02
+   l16-c02
+      » skip » l19-c03
+      » skip » l10-c01
+   l19-c03
+      » L == 1 » l20-c03
+      » L != 1 » ~assert
+   l20-c03
+      » L := 0 » l21-c03
+   l21-c03
+      » new := (new + 1) » l10-c01
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l09-c01: No
+
+=============================
+prg/locking_variant.c with bound 5
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+12 locations:
+   l09-c01, l10-c01, l11-c01, l14-c02, l15-c02, l16-c02, l17-c02, l20-c03,
+   l21-c03, l22-c03, l25-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new := (old + 1) » l11-c01
+   l11-c01
+      » new != old » l14-c02
+      » new == old » l25-c00
+   l14-c02
+      » L == 0 » l15-c02
+      » L != 0 » ~assert
+   l15-c02
+      » L := 1 » l16-c02
+   l16-c02
+      » old := new » l17-c02
+   l17-c02
+      » skip » l20-c03
+      » skip » l11-c01
+   l20-c03
+      » L == 1 » l21-c03
+      » L != 1 » ~assert
+   l21-c03
+      » L := 0 » l22-c03
+   l22-c03
+      » new := (new + 1) » l11-c01
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l09-c01: No
+
+=============================
+prg/locking_variant.c with bound 25
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+12 locations:
+   l09-c01, l10-c01, l11-c01, l14-c02, l15-c02, l16-c02, l17-c02, l20-c03,
+   l21-c03, l22-c03, l25-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new := (old + 1) » l11-c01
+   l11-c01
+      » new != old » l14-c02
+      » new == old » l25-c00
+   l14-c02
+      » L == 0 » l15-c02
+      » L != 0 » ~assert
+   l15-c02
+      » L := 1 » l16-c02
+   l16-c02
+      » old := new » l17-c02
+   l17-c02
+      » skip » l20-c03
+      » skip » l11-c01
+   l20-c03
+      » L == 1 » l21-c03
+      » L != 1 » ~assert
+   l21-c03
+      » L := 0 » l22-c03
+   l22-c03
+      » new := (new + 1) » l11-c01
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l09-c01: No
+
+=============================
+prg/locking_variant.c with bound 100
+=============================
+Automaton:
+   locking
+3 variables:
+   L, old, new
+12 locations:
+   l09-c01, l10-c01, l11-c01, l14-c02, l15-c02, l16-c02, l17-c02, l20-c03,
+   l21-c03, l22-c03, l25-c00, ~assert
+Initial location:
+   l09-c01
+Final location:
+   ~assert
+Transitions:
+   l09-c01
+      » L := 0 » l10-c01
+   l10-c01
+      » new := (old + 1) » l11-c01
+   l11-c01
+      » new != old » l14-c02
+      » new == old » l25-c00
+   l14-c02
+      » L == 0 » l15-c02
+      » L != 0 » ~assert
+   l15-c02
+      » L := 1 » l16-c02
+   l16-c02
+      » old := new » l17-c02
+   l17-c02
+      » skip » l20-c03
+      » skip » l11-c01
+   l20-c03
+      » L == 1 » l21-c03
+      » L != 1 » ~assert
+   l21-c03
+      » L := 0 » l22-c03
+   l22-c03
+      » new := (new + 1) » l11-c01
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l09-c01: No
+
+=============================
+prg/long_to_violate.c with bound 5
+=============================
+Automaton:
+   long_to_violate
+2 variables:
+   x, y
+11 locations:
+   l07-c01, l08-c01, l10-c02, l11-c03, l13-c03, l14-c02, l15-c03, l16-c02,
+   l18-c01, l19-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 20 » l10-c02
+      » x >= 20 » l18-c01
+   l10-c02
+      » y < 0 » l11-c03
+      » y >= 0 » l13-c03
+   l11-c03
+      » y := (y + x) » l14-c02
+   l13-c03
+      » y := (y - x) » l14-c02
+   l14-c02
+      » skip » l15-c03
+      » skip » l16-c02
+   l15-c03
+      » y := (y + 200) » l16-c02
+   l16-c02
+      » x := (x + 1) » l08-c01
+   l18-c01
+      » y > 0 » l19-c00
+      » y <= 0 » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/long_to_violate.c with bound 25
+=============================
+Automaton:
+   long_to_violate
+2 variables:
+   x, y
+11 locations:
+   l07-c01, l08-c01, l10-c02, l11-c03, l13-c03, l14-c02, l15-c03, l16-c02,
+   l18-c01, l19-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 20 » l10-c02
+      » x >= 20 » l18-c01
+   l10-c02
+      » y < 0 » l11-c03
+      » y >= 0 » l13-c03
+   l11-c03
+      » y := (y + x) » l14-c02
+   l13-c03
+      » y := (y - x) » l14-c02
+   l14-c02
+      » skip » l15-c03
+      » skip » l16-c02
+   l15-c03
+      » y := (y + 200) » l16-c02
+   l16-c02
+      » x := (x + 1) » l08-c01
+   l18-c01
+      » y > 0 » l19-c00
+      » y <= 0 » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/long_to_violate.c with bound 100
+=============================
+Automaton:
+   long_to_violate
+2 variables:
+   x, y
+11 locations:
+   l07-c01, l08-c01, l10-c02, l11-c03, l13-c03, l14-c02, l15-c03, l16-c02,
+   l18-c01, l19-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 20 » l10-c02
+      » x >= 20 » l18-c01
+   l10-c02
+      » y < 0 » l11-c03
+      » y >= 0 » l13-c03
+   l11-c03
+      » y := (y + x) » l14-c02
+   l13-c03
+      » y := (y - x) » l14-c02
+   l14-c02
+      » skip » l15-c03
+      » skip » l16-c02
+   l15-c03
+      » y := (y + 200) » l16-c02
+   l16-c02
+      » x := (x + 1) » l08-c01
+   l18-c01
+      » y > 0 » l19-c00
+      » y <= 0 » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+=============================
+prg/must_unfold_loop.c with bound 5
+=============================
+Automaton:
+   must_unfold_loop
+3 variables:
+   x, y, z
+11 locations:
+   l07-c01, l08-c01, l09-c01, l10-c06, l10-c12, l10-c21, l12-c02, l13-c03,
+   l14-c02, l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » z := 20 » l09-c01
+   l09-c01
+      » y := 0 » l10-c06
+   l10-c06
+      » x := 0 » l10-c12
+   l10-c12
+      » x < 20 » l12-c02
+      » x >= 20 » l16-c00
+   l10-c21
+      » x := (x + 1) » l10-c12
+   l12-c02
+      » skip » l13-c03
+      » skip » l14-c02
+   l13-c03
+      » y := (y + 1) » l14-c02
+   l14-c02
+      » (x * y) < z » l10-c21
+      » (x * y) >= z » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/must_unfold_loop.c with bound 25
+=============================
+Automaton:
+   must_unfold_loop
+3 variables:
+   x, y, z
+11 locations:
+   l07-c01, l08-c01, l09-c01, l10-c06, l10-c12, l10-c21, l12-c02, l13-c03,
+   l14-c02, l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » z := 20 » l09-c01
+   l09-c01
+      » y := 0 » l10-c06
+   l10-c06
+      » x := 0 » l10-c12
+   l10-c12
+      » x < 20 » l12-c02
+      » x >= 20 » l16-c00
+   l10-c21
+      » x := (x + 1) » l10-c12
+   l12-c02
+      » skip » l13-c03
+      » skip » l14-c02
+   l13-c03
+      » y := (y + 1) » l14-c02
+   l14-c02
+      » (x * y) < z » l10-c21
+      » (x * y) >= z » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/must_unfold_loop.c with bound 100
+=============================
+Automaton:
+   must_unfold_loop
+3 variables:
+   x, y, z
+11 locations:
+   l07-c01, l08-c01, l09-c01, l10-c06, l10-c12, l10-c21, l12-c02, l13-c03,
+   l14-c02, l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » z := 20 » l09-c01
+   l09-c01
+      » y := 0 » l10-c06
+   l10-c06
+      » x := 0 » l10-c12
+   l10-c12
+      » x < 20 » l12-c02
+      » x >= 20 » l16-c00
+   l10-c21
+      » x := (x + 1) » l10-c12
+   l12-c02
+      » skip » l13-c03
+      » skip » l14-c02
+   l13-c03
+      » y := (y + 1) » l14-c02
+   l14-c02
+      » (x * y) < z » l10-c21
+      » (x * y) >= z » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path (of length 28):
+   l07-c01
+      » x := 0 »
+   l08-c01
+      » z := 20 »
+   l09-c01
+      » y := 0 »
+   l10-c06
+      » x := 0 »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) < z »
+   l10-c21
+      » x := (x + 1) »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) < z »
+   l10-c21
+      » x := (x + 1) »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) < z »
+   l10-c21
+      » x := (x + 1) »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) < z »
+   l10-c21
+      » x := (x + 1) »
+   l10-c12
+      » x < 20 »
+   l12-c02
+      » skip »
+   l13-c03
+      » y := (y + 1) »
+   l14-c02
+      » (x * y) >= z »
+   ~assert
+
+Final location ~assert reachable from initial location l07-c01: Yes
+
+=============================
+prg/no_assert.c with bound 5
+=============================
+Automaton:
+   no_assert
+3 variables:
+   x, y, z
+11 locations:
+   l07-c06, l07-c12, l07-c21, l09-c07, l09-c13, l09-c23, l11-c03, l12-c04,
+   l14-c04, l17-c00, ~assert
+Initial location:
+   l07-c06
+Final location:
+   ~assert
+Transitions:
+   l07-c06
+      » x := 0 » l07-c12
+   l07-c12
+      » x < 20 » l09-c07
+      » x >= 20 » l17-c00
+   l07-c21
+      » x := (x + 1) » l07-c12
+   l09-c07
+      » y := 0 » l09-c13
+   l09-c13
+      » y < (x * x) » l11-c03
+      » y >= (x * x) » l07-c21
+   l09-c23
+      » y := (y + 1) » l09-c13
+   l11-c03
+      » skip » l12-c04
+      » skip » l14-c04
+   l12-c04
+      » z := (z + 1) » l09-c23
+   l14-c04
+      » z := (z - 1) » l09-c23
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l07-c06: No
+
+=============================
+prg/no_assert.c with bound 25
+=============================
+Automaton:
+   no_assert
+3 variables:
+   x, y, z
+11 locations:
+   l07-c06, l07-c12, l07-c21, l09-c07, l09-c13, l09-c23, l11-c03, l12-c04,
+   l14-c04, l17-c00, ~assert
+Initial location:
+   l07-c06
+Final location:
+   ~assert
+Transitions:
+   l07-c06
+      » x := 0 » l07-c12
+   l07-c12
+      » x < 20 » l09-c07
+      » x >= 20 » l17-c00
+   l07-c21
+      » x := (x + 1) » l07-c12
+   l09-c07
+      » y := 0 » l09-c13
+   l09-c13
+      » y < (x * x) » l11-c03
+      » y >= (x * x) » l07-c21
+   l09-c23
+      » y := (y + 1) » l09-c13
+   l11-c03
+      » skip » l12-c04
+      » skip » l14-c04
+   l12-c04
+      » z := (z + 1) » l09-c23
+   l14-c04
+      » z := (z - 1) » l09-c23
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l07-c06: No
+
+=============================
+prg/no_assert.c with bound 100
+=============================
+Automaton:
+   no_assert
+3 variables:
+   x, y, z
+11 locations:
+   l07-c06, l07-c12, l07-c21, l09-c07, l09-c13, l09-c23, l11-c03, l12-c04,
+   l14-c04, l17-c00, ~assert
+Initial location:
+   l07-c06
+Final location:
+   ~assert
+Transitions:
+   l07-c06
+      » x := 0 » l07-c12
+   l07-c12
+      » x < 20 » l09-c07
+      » x >= 20 » l17-c00
+   l07-c21
+      » x := (x + 1) » l07-c12
+   l09-c07
+      » y := 0 » l09-c13
+   l09-c13
+      » y < (x * x) » l11-c03
+      » y >= (x * x) » l07-c21
+   l09-c23
+      » y := (y + 1) » l09-c13
+   l11-c03
+      » skip » l12-c04
+      » skip » l14-c04
+   l12-c04
+      » z := (z + 1) » l09-c23
+   l14-c04
+      » z := (z - 1) » l09-c23
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l07-c06: No
+
+=============================
+prg/not_reachable.c with bound 5
+=============================
+Automaton:
+   not_rechable
+3 variables:
+   x, y, z
+12 locations:
+   l08-c01, l09-c01, l11-c07, l11-c13, l11-c21, l13-c08, l13-c14, l13-c23,
+   l15-c04, l17-c03, l20-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x := 0 » l09-c01
+   l09-c01
+      » x < 10 » l11-c07
+      » x >= 10 » l20-c00
+   l11-c07
+      » y := x » l11-c13
+   l11-c13
+      » y < 0 » l13-c08
+      » y >= 0 » l09-c01
+   l11-c21
+      » y := (y + 1) » l11-c13
+   l13-c08
+      » z := 0 » l13-c14
+   l13-c14
+      » z < 10 » l15-c04
+      » z >= 10 » l17-c03
+   l13-c23
+      » z := (z + 1) » l13-c14
+   l15-c04
+      » x := (x + 1) » l13-c23
+   l17-c03
+      » 0 == 1 » l11-c21
+      » 0 != 1 » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/not_reachable.c with bound 25
+=============================
+Automaton:
+   not_rechable
+3 variables:
+   x, y, z
+12 locations:
+   l08-c01, l09-c01, l11-c07, l11-c13, l11-c21, l13-c08, l13-c14, l13-c23,
+   l15-c04, l17-c03, l20-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x := 0 » l09-c01
+   l09-c01
+      » x < 10 » l11-c07
+      » x >= 10 » l20-c00
+   l11-c07
+      » y := x » l11-c13
+   l11-c13
+      » y < 0 » l13-c08
+      » y >= 0 » l09-c01
+   l11-c21
+      » y := (y + 1) » l11-c13
+   l13-c08
+      » z := 0 » l13-c14
+   l13-c14
+      » z < 10 » l15-c04
+      » z >= 10 » l17-c03
+   l13-c23
+      » z := (z + 1) » l13-c14
+   l15-c04
+      » x := (x + 1) » l13-c23
+   l17-c03
+      » 0 == 1 » l11-c21
+      » 0 != 1 » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/not_reachable.c with bound 100
+=============================
+Automaton:
+   not_rechable
+3 variables:
+   x, y, z
+12 locations:
+   l08-c01, l09-c01, l11-c07, l11-c13, l11-c21, l13-c08, l13-c14, l13-c23,
+   l15-c04, l17-c03, l20-c00, ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » x := 0 » l09-c01
+   l09-c01
+      » x < 10 » l11-c07
+      » x >= 10 » l20-c00
+   l11-c07
+      » y := x » l11-c13
+   l11-c13
+      » y < 0 » l13-c08
+      » y >= 0 » l09-c01
+   l11-c21
+      » y := (y + 1) » l11-c13
+   l13-c08
+      » z := 0 » l13-c14
+   l13-c14
+      » z < 10 » l15-c04
+      » z >= 10 » l17-c03
+   l13-c23
+      » z := (z + 1) » l13-c14
+   l15-c04
+      » x := (x + 1) » l13-c23
+   l17-c03
+      » 0 == 1 » l11-c21
+      » 0 != 1 » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/not_reachable_tractable.c with bound 5
+=============================
+Automaton:
+   not_rechable
+2 variables:
+   x, y
+9 locations:
+   l07-c01, l08-c01, l10-c07, l10-c13, l10-c21, l12-c03, l14-c02, l16-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 10 » l10-c07
+      » x >= 10 » l16-c00
+   l10-c07
+      » y := x » l10-c13
+   l10-c13
+      » y < 0 » l12-c03
+      » y >= 0 » l14-c02
+   l10-c21
+      » y := (y + 1) » l10-c13
+   l12-c03
+      » 0 == 1 » l10-c21
+      » 0 != 1 » ~assert
+   l14-c02
+      » x := (x + 1) » l08-c01
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/not_reachable_tractable.c with bound 25
+=============================
+Automaton:
+   not_rechable
+2 variables:
+   x, y
+9 locations:
+   l07-c01, l08-c01, l10-c07, l10-c13, l10-c21, l12-c03, l14-c02, l16-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 10 » l10-c07
+      » x >= 10 » l16-c00
+   l10-c07
+      » y := x » l10-c13
+   l10-c13
+      » y < 0 » l12-c03
+      » y >= 0 » l14-c02
+   l10-c21
+      » y := (y + 1) » l10-c13
+   l12-c03
+      » 0 == 1 » l10-c21
+      » 0 != 1 » ~assert
+   l14-c02
+      » x := (x + 1) » l08-c01
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l07-c01: No
+
+=============================
+prg/not_reachable_tractable.c with bound 100
+=============================
+Automaton:
+   not_rechable
+2 variables:
+   x, y
+9 locations:
+   l07-c01, l08-c01, l10-c07, l10-c13, l10-c21, l12-c03, l14-c02, l16-c00,
+   ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 0 » l08-c01
+   l08-c01
+      » x < 10 » l10-c07
+      » x >= 10 » l16-c00
+   l10-c07
+      » y := x » l10-c13
+   l10-c13
+      » y < 0 » l12-c03
+      » y >= 0 » l14-c02
+   l10-c21
+      » y := (y + 1) » l10-c13
+   l12-c03
+      » 0 == 1 » l10-c21
+      » 0 != 1 » ~assert
+   l14-c02
+      » x := (x + 1) » l08-c01
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l07-c01: No
+
+=============================
+prg/pigeon.c with bound 5
+=============================
+Automaton:
+   pigeon
+5 variables:
+   pigeon, n1, n2, n3, n4
+17 locations:
+   l08-c01, l09-c01, l10-c01, l11-c01, l12-c01, l14-c01, l15-c02, l16-c02,
+   l17-c03, l19-c03, l20-c04, l22-c04, l23-c05, l25-c05, l26-c02, l28-c00,
+   ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » pigeon := 0 » l09-c01
+   l09-c01
+      » n1 := 0 » l10-c01
+   l10-c01
+      » n2 := 0 » l11-c01
+   l11-c01
+      » n3 := 0 » l12-c01
+   l12-c01
+      » n4 := 0 » l14-c01
+   l14-c01
+      » 1 != 0 » l15-c02
+      » 1 == 0 » l28-c00
+   l15-c02
+      » pigeon := (pigeon + 1) » l16-c02
+   l16-c02
+      » skip » l17-c03
+      » skip » l19-c03
+   l17-c03
+      » n1 := (n1 + 1) » l26-c02
+   l19-c03
+      » skip » l20-c04
+      » skip » l22-c04
+   l20-c04
+      » n2 := (n2 + 1) » l26-c02
+   l22-c04
+      » skip » l23-c05
+      » skip » l25-c05
+   l23-c05
+      » n3 := (n3 + 1) » l26-c02
+   l25-c05
+      » n4 := (n4 + 1) » l26-c02
+   l26-c02
+      » pigeon == (((n1 + n2) + n3) + n4) » l14-c01
+      » pigeon != (((n1 + n2) + n3) + n4) » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l08-c01: Unknown
+
+=============================
+prg/pigeon.c with bound 25
+=============================
+Automaton:
+   pigeon
+5 variables:
+   pigeon, n1, n2, n3, n4
+17 locations:
+   l08-c01, l09-c01, l10-c01, l11-c01, l12-c01, l14-c01, l15-c02, l16-c02,
+   l17-c03, l19-c03, l20-c04, l22-c04, l23-c05, l25-c05, l26-c02, l28-c00,
+   ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » pigeon := 0 » l09-c01
+   l09-c01
+      » n1 := 0 » l10-c01
+   l10-c01
+      » n2 := 0 » l11-c01
+   l11-c01
+      » n3 := 0 » l12-c01
+   l12-c01
+      » n4 := 0 » l14-c01
+   l14-c01
+      » 1 != 0 » l15-c02
+      » 1 == 0 » l28-c00
+   l15-c02
+      » pigeon := (pigeon + 1) » l16-c02
+   l16-c02
+      » skip » l17-c03
+      » skip » l19-c03
+   l17-c03
+      » n1 := (n1 + 1) » l26-c02
+   l19-c03
+      » skip » l20-c04
+      » skip » l22-c04
+   l20-c04
+      » n2 := (n2 + 1) » l26-c02
+   l22-c04
+      » skip » l23-c05
+      » skip » l25-c05
+   l23-c05
+      » n3 := (n3 + 1) » l26-c02
+   l25-c05
+      » n4 := (n4 + 1) » l26-c02
+   l26-c02
+      » pigeon == (((n1 + n2) + n3) + n4) » l14-c01
+      » pigeon != (((n1 + n2) + n3) + n4) » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l08-c01: No
+
+=============================
+prg/pigeon.c with bound 100
+=============================
+Automaton:
+   pigeon
+5 variables:
+   pigeon, n1, n2, n3, n4
+17 locations:
+   l08-c01, l09-c01, l10-c01, l11-c01, l12-c01, l14-c01, l15-c02, l16-c02,
+   l17-c03, l19-c03, l20-c04, l22-c04, l23-c05, l25-c05, l26-c02, l28-c00,
+   ~assert
+Initial location:
+   l08-c01
+Final location:
+   ~assert
+Transitions:
+   l08-c01
+      » pigeon := 0 » l09-c01
+   l09-c01
+      » n1 := 0 » l10-c01
+   l10-c01
+      » n2 := 0 » l11-c01
+   l11-c01
+      » n3 := 0 » l12-c01
+   l12-c01
+      » n4 := 0 » l14-c01
+   l14-c01
+      » 1 != 0 » l15-c02
+      » 1 == 0 » l28-c00
+   l15-c02
+      » pigeon := (pigeon + 1) » l16-c02
+   l16-c02
+      » skip » l17-c03
+      » skip » l19-c03
+   l17-c03
+      » n1 := (n1 + 1) » l26-c02
+   l19-c03
+      » skip » l20-c04
+      » skip » l22-c04
+   l20-c04
+      » n2 := (n2 + 1) » l26-c02
+   l22-c04
+      » skip » l23-c05
+      » skip » l25-c05
+   l23-c05
+      » n3 := (n3 + 1) » l26-c02
+   l25-c05
+      » n4 := (n4 + 1) » l26-c02
+   l26-c02
+      » pigeon == (((n1 + n2) + n3) + n4) » l14-c01
+      » pigeon != (((n1 + n2) + n3) + n4) » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l08-c01: No
+
+=============================
+prg/relational.c with bound 5
+=============================
+Automaton:
+   relational
+3 variables:
+   x, y, z
+10 locations:
+   l07-c01, l08-c06, l08-c13, l08-c22, l10-c02, l11-c03, l13-c03, l15-c01,
+   l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c06
+   l08-c06
+      » y := 0 » l08-c13
+   l08-c13
+      » y < z » l10-c02
+      » y >= z » l15-c01
+   l08-c22
+      » y := (y + 1) » l08-c13
+   l10-c02
+      » skip » l11-c03
+      » skip » l13-c03
+   l11-c03
+      » x := (x + 5) » l08-c22
+   l13-c03
+      » x := (x + 3) » l08-c22
+   l15-c01
+      » x > (2 * z) » l16-c00
+      » x <= (2 * z) » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/relational.c with bound 25
+=============================
+Automaton:
+   relational
+3 variables:
+   x, y, z
+10 locations:
+   l07-c01, l08-c06, l08-c13, l08-c22, l10-c02, l11-c03, l13-c03, l15-c01,
+   l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c06
+   l08-c06
+      » y := 0 » l08-c13
+   l08-c13
+      » y < z » l10-c02
+      » y >= z » l15-c01
+   l08-c22
+      » y := (y + 1) » l08-c13
+   l10-c02
+      » skip » l11-c03
+      » skip » l13-c03
+   l11-c03
+      » x := (x + 5) » l08-c22
+   l13-c03
+      » x := (x + 3) » l08-c22
+   l15-c01
+      » x > (2 * z) » l16-c00
+      » x <= (2 * z) » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/relational.c with bound 100
+=============================
+Automaton:
+   relational
+3 variables:
+   x, y, z
+10 locations:
+   l07-c01, l08-c06, l08-c13, l08-c22, l10-c02, l11-c03, l13-c03, l15-c01,
+   l16-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c06
+   l08-c06
+      » y := 0 » l08-c13
+   l08-c13
+      » y < z » l10-c02
+      » y >= z » l15-c01
+   l08-c22
+      » y := (y + 1) » l08-c13
+   l10-c02
+      » skip » l11-c03
+      » skip » l13-c03
+   l11-c03
+      » x := (x + 5) » l08-c22
+   l13-c03
+      » x := (x + 3) » l08-c22
+   l15-c01
+      » x > (2 * z) » l16-c00
+      » x <= (2 * z) » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/running_example.c with bound 5
+=============================
+Automaton:
+   running
+2 variables:
+   x, y
+10 locations:
+   l07-c01, l08-c01, l09-c02, l11-c02, l13-c03, l14-c03, l16-c01, l17-c01,
+   l18-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c01
+   l08-c01
+      » y <= 10 » l09-c02
+      » y > 10 » l11-c02
+   l09-c02
+      » y := 10 » l16-c01
+   l11-c02
+      » x < y » l13-c03
+      » x >= y » l16-c01
+   l13-c03
+      » x := (2 * x) » l14-c03
+   l14-c03
+      » y := (y - 1) » l11-c02
+   l16-c01
+      » x := (y + 1) » l17-c01
+   l17-c01
+      » x > 0 » l18-c00
+      » x <= 0 » ~assert
+
+Bounded model checking: backward, depth <= 5
+
+Feasible path:
+   None, not exhaustive
+
+Final location ~assert reachable from initial location l07-c01: Unknown
+
+=============================
+prg/running_example.c with bound 25
+=============================
+Automaton:
+   running
+2 variables:
+   x, y
+10 locations:
+   l07-c01, l08-c01, l09-c02, l11-c02, l13-c03, l14-c03, l16-c01, l17-c01,
+   l18-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c01
+   l08-c01
+      » y <= 10 » l09-c02
+      » y > 10 » l11-c02
+   l09-c02
+      » y := 10 » l16-c01
+   l11-c02
+      » x < y » l13-c03
+      » x >= y » l16-c01
+   l13-c03
+      » x := (2 * x) » l14-c03
+   l14-c03
+      » y := (y - 1) » l11-c02
+   l16-c01
+      » x := (y + 1) » l17-c01
+   l17-c01
+      » x > 0 » l18-c00
+      » x <= 0 » ~assert
+
+Bounded model checking: backward, depth <= 25
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l07-c01: No
+
+=============================
+prg/running_example.c with bound 100
+=============================
+Automaton:
+   running
+2 variables:
+   x, y
+10 locations:
+   l07-c01, l08-c01, l09-c02, l11-c02, l13-c03, l14-c03, l16-c01, l17-c01,
+   l18-c00, ~assert
+Initial location:
+   l07-c01
+Final location:
+   ~assert
+Transitions:
+   l07-c01
+      » x := 1 » l08-c01
+   l08-c01
+      » y <= 10 » l09-c02
+      » y > 10 » l11-c02
+   l09-c02
+      » y := 10 » l16-c01
+   l11-c02
+      » x < y » l13-c03
+      » x >= y » l16-c01
+   l13-c03
+      » x := (2 * x) » l14-c03
+   l14-c03
+      » y := (y - 1) » l11-c02
+   l16-c01
+      » x := (y + 1) » l17-c01
+   l17-c01
+      » x > 0 » l18-c00
+      » x <= 0 » ~assert
+
+Bounded model checking: backward, depth <= 100
+
+Feasible path:
+   None, exhaustive
+
+Final location ~assert reachable from initial location l07-c01: No
+

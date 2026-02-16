@@ -1,0 +1,22 @@
+# dune exec -- bin/bmc.exe -algo global -analysis fwd examples/aut/running_example.aut
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /home/rwach/.cache/dune/db
+# Workspace root: /mnt/c/Users/Romain/Desktop/master/stage/pauleve/code/TP-BMC
+# Auto-detected concurrency: 12
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; installed_env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/mnt/c/Users/Romain/Desktop/master/stage/pauleve/code/TP-BMC/_build/default"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; instrument_with = []
+#  }

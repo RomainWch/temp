@@ -1,0 +1,5 @@
+# Region file for predicates-02.aut (forward inductive invariant).
+
+q_0 : tt;
+q_1 : x >= 0;
+q_2 : y >= 0;

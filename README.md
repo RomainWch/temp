@@ -1,0 +1,1 @@
+Dans TP-BMC ce que j'ai implementé est la fonction dfs ainsi que fwd_search et bwd_search dans lib/DepthFirstSearch.py et la fonction GlobalBMC ainsi que fwd_search, bwd_search et reverse_result dans lib/GlobalBMC.ml
